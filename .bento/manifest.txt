@@ -1,0 +1,5 @@
+TITLE=TecZone Laser Reference Manual 
+OUTDIR=../TecZoneLaserHTML-en 
+LOGO=img1/logo1.png,103,34 
+COPYRIGHT=Copyright &copy; 2025 by TRUMPF SE + Co. KG. All rights reserved. 
+ATTRIBUTE=appName:TecZone Laser 

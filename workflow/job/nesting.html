@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Nesting</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img1/logo1.png" width="103" height="34 " /></div>
+        <div><p>TecZone Laser Reference Manual </p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Welcome to TecZone Laser</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../intro/index.html">Introduction</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../intro/install.html">Installing TecZone Laser</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/ui.html">TecZone Laser User Interface</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/workflow.html">Workflow Panel</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/database.html">Machine Database</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html">Basic Workflows</a>
+      <ul>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../part/index.html">Part Workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../part/loadpart.html">Load Part</a></li>
+            <li><button class="tree blank"></button><a href="../part/sketch.html">Sketch Mode</a></li>
+            <li><button class="tree blank"></button><a href="../part/measure.html">Measure</a></li>
+            <li><button class="tree blank"></button><a href="../part/modifythecutting.html">Modifying Laser Part</a></li>
+            <li><button class="tree blank"></button><a href="../part/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../part/sequence.html">Sequence Navigator </a></li>
+            <li><button class="tree blank"></button><a href="../part/nc.html">NC Code Generation</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html">Job workflow</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="createjob.html">Create Job</a></li>
+            <li><button class="tree blank"></button><a href="setthelasertechnology.html">Set Laser Technology Table (LTT)</a></li>
+            <li><button class="tree blank"></button><a class="active" href="nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="automaticpartplacement.html">Automatic Part Placement</a></li>
+            <li><button class="tree blank"></button><a href="manualpartplacement.html">Manual Part Placement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../advancetopics/index.html">Advanced Topics</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../advancetopics/geoimport.html">Geometry Import Options</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../advancetopics/advtooling/index.html">Advanced Tooling Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/microjoint.html">Editing Microjoints</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/twinlinetooling.html">TwinLine</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/flyline.html">FlyLine</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/dimpleapproach.html">Dimple Approach</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/remaindersheets.html">Remainder Sheets</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/pieslug.html">Pie-Slug  Circular Holes </a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/avoidretooling.html">Avoid Retooling Pierces</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/finishingrules.html">Finishing Rules</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/cloneltt.html">Clone LTT</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../advancetopics/advnesting/index.html">Advanced Nesting Features</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../advancetopics/advnesting/mirror.html">Mirrored Parts</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advnesting/findpart.html">Find a Part in Nest Layout</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advnesting/fillerpartsjob.html">Filler parts in Nest Layout</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../advancetopics/advoptimization/index.html">Advanced Tooling Optimization</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/optimizingcontourquality.html"> Contour Quality</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/scrapcutting.html">Optimizing Stability with Scrap Cutting</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/influencingtiltingbehaviour.html">Optimizing Tilting Behaviour</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/spaceout.html">Space Out Slice Cuts to Avoid Collision</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/minimizelayouts.html">Minimize Number of Different Layouts</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/dynamiclevel.html">Dynamic Level Setting </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../advancetopics/menu/index.html">Advanced Menu Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../advancetopics/menu/contextsensitivemenues.html"> Context Sensitive Menus</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/menu/hirarchicalsettingconcept.html">Hierarchy of Settings</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/menu/multiselections.html">Multi-Selections</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/menu/csv.html">CSV Output</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../advancetopics/manualsheetslice.html">Manual Sheet Slicing Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../../advancetopics/textonparts.html">Text on Parts</a></li>
+        <li><button class="tree blank"></button><a href="../../advancetopics/bevelcut.html">Bevel Cut</a></li>
+        <li><button class="tree blank"></button><a href="../../advancetopics/detectline.html">DetectLine</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../applicationsettings/index.html">Application Settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../applicationsettings/cutcam/index.html">Cut CAM</a>
+          <ul class="hide">
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/layout/index.html">Layout</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/nesting.html">Nest Settings</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheet.html">Sheet</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/worksupport.html">Work Support</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/lasercam/index.html">Laser CAM</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/lasercam/sequence.html">Sequence</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutoutputs.html">Cut Outputs</a></li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutview.html">Cut View</a></li>
+      </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html">Basic Workflows</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">Job workflow</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="nesting.html">Nesting</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Nesting</h1>
+<div class="sect1">
+<h2 id="_layouts">Layouts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Laser has a powerful nesting engine which places your parts in the most efficient way on a sheet.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/n165.png" alt="n165">
+</div>
+<div class="title">Figure 1. Nesting in Job mode</div>
+</div>
+<div class="sect2">
+<h3 id="_spread_out_parts_on_a_nested_layout_if_there_is_no_remainder_sheet">Spread-out parts on a nested layout if there is no remainder sheet</h3>
+<div class="imageblock">
+<div class="content">
+<img src="img/spreadparts.png" alt="spreadparts">
+</div>
+</div>
+<div class="paragraph">
+<p>TecZone Laser&#8217;s nesting engine automatically spreads-out parts on fully
+filled sheetsIt analyses the layout and checks if spreading out will
+make a meaningful difference to part spacing and if it does, it will
+spread out the partsThis automatically improves sheet stability.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne57.png" alt="ne57">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_option_to_prefer_placing_thin_long_parts_across_slats_rather_than_along_slats">Option to prefer placing thin long parts across slats rather than along slats</h3>
+<div class="paragraph">
+<p>It is great if the nesting engine is aware of laser processing
+implications when it is positioning a part. TecZone Laser&#8217;s homegrown nesting
+engine is aware of the slat configuration and automatically chooses
+prefers across the slat orientations for some parts (possibly at the
+cost of nesting efficiency).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne56.png" alt="ne56">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne55.png" alt="ne55">
+</div>
+<div class="title">Figure 2. Without this option checked</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne54.png" alt="ne54">
+</div>
+<div class="title">Figure 3. With this option checked</div>
+</div>
+<div class="paragraph">
+<p>These options also can be set in <strong>Settings &#8594; Cut CAM &#8594; Nesting</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne26.png" alt="ne26" width="75%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nesting_with_taking_grain_direction_rolling_direction_into_account">Nesting with taking grain direction (rolling direction) into account</h3>
+<div class="paragraph">
+<p>User can specify the preferred material grain on the part and
+TecZone Laser will ensure that the part is placed in the right orientation on the
+blank sheet, taking the blank sheet&#8217;s rolling direction into account.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne52.png" alt="ne52">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne51.png" alt="ne51">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nesting_based_on_priority_of_parts">Nesting based on priority of parts</h3>
+<div class="paragraph">
+<p>TecZone Laser can nest parts based on their priority. Parts with lower priority number are preferably nested before parts with higher priority number. The exception to this rule is when parts have 0 as priority number. Such parts have least priority.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/part.png" alt="part">
+</div>
+<div class="title">Figure 4. Parts for nesting without priority</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/partlayout1.png" alt="PartLayout1" width="250"></span>
+<span class="image"><img src="img/partlayout2.png" alt="PartLayout2" width="250"></span>
+<span class="image"><img src="img/partlayout3.png" alt="PartLayout3" width="250"></span></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/partpriority.png" alt="PartPriority">
+</div>
+<div class="title">Figure 5. Parts for nesting with priority</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/partpriority1.png" alt="PartPriority1" width="250"></span>
+<span class="image"><img src="img/partpriority2.png" alt="PartPriority2" width="250"></span>
+<span class="image"><img src="img/partpriority3.png" alt="PartPriority3" width="250"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automatic_twinline_nesting">Automatic TwinLine Nesting</h3>
+<div class="paragraph">
+<p>TecZone Laser nesting engine can generate good automatic twinline nest
+results, taking into considerations various twinline related
+sensitivities.</p>
+</div>
+<div class="paragraph">
+<p><strong>Consistent space between edges:</strong> When creating
+nesting cells (patterns that are repeated) the software ensures that the
+distance between part edges is either exactly equal to kerf width or the
+usual part gap.</p>
+</div>
+<div class="paragraph">
+<p><strong>Well aligned twinline edges:</strong> In the previous
+implementation, the twinlined edges were not overlapping completely,
+creating tiny, unmachinable nooks as shown in the snapshot belowThis
+should not happen now.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne50.png" alt="ne50">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>No tiny twinline segments:</strong> The software will
+never create tiny twinline segments shorter than 10mm.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne49.png" alt="ne49">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nesting_a_partly_filled_sheet">Nesting a partly filled sheet</h3>
+<div class="paragraph">
+<p>TecZone Laser can nest on a sheet partly filled. It can come in handy
+when a user wants to manually nest a portion of the layout and then want
+the software to automatically fill the rest of the sheet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nesting_on_non_rectangular_sheets_or_sheets_with_holes">Nesting on non-rectangular sheets or sheets with holes</h3>
+<div class="paragraph">
+<p>TecZone Laser can automatically nest on a non-rectangular remainder
+sheet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sequencing_routing_optimization">Sequencing &amp; Routing optimization</h3>
+<div class="paragraph">
+<p>Sequencing and routing optimization is much improved over
+previous CAM systems.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sequence within a part is optimized much better with the
+goal to minimize head repositioning time.</p>
+</li>
+<li>
+<p>Multiple sequences are computed for each part, each
+optimized for different scenarios on the layout. Depending on where the
+machine head is coming from and where it needs to go next, the order
+within a part could vary across instances of the same part.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Moving around cut holes (instead of raising head).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne48.png" alt="ne48">
+</div>
+</div>
+<div class="paragraph">
+<p>Sometimes, it is faster to quickly go around an obstructing
+hole with head down rather than lifting the head up. TecZone Laser can do that
+when it saves time and it is safe. For safety reasons, when routing
+around a hole that could have a tilted cutout, it applies greater
+margin, otherwise a smaller standard margin. Thus, TecZone Laser&#8217;s tipping
+analysis helps in optimizing routing and reduces processing time on the
+machine.</p>
+</div>
+<div class="paragraph">
+<p>Instant reading of head repositioning time to gauge effect of manual sequence and routing changes.</p>
+</div>
+<div class="paragraph">
+<p>The total time spent for head repositioning is a good metric to
+measure the quality of sequence and routing optimization. TecZone Laser
+calculates this time accurately and instantly.This helps the user gauge
+the impact of her changes to the sequence.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automatic_adding_of_microjoint_to_a_hole_if_another_part_is_nested_in_it_on_layout">Automatic adding of microjoint to a hole if another part is nested in it (on layout)</h3>
+<div class="paragraph">
+<p>A big hole inside a part could be evaluated as being stable at
+the part level. But on a layout, when other smaller parts are nested in
+this hole, it could become unstable. TecZone Laser can detect such situations and
+automatically add a microjoint. This is done dynamically even while the
+user is manually modifying the layout.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne47.png" alt="ne47">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_layouts">Layouts</a>
+    </li>
+    <li level="2">
+      <a href="#_spread_out_parts_on_a_nested_layout_if_there_is_no_remainder_sheet">Spread-out parts on a nested layout if there is no remainder sheet</a>
+    </li>
+    <li level="2">
+      <a href="#_option_to_prefer_placing_thin_long_parts_across_slats_rather_than_along_slats">Option to prefer placing thin long parts across slats rather than along slats</a>
+    </li>
+    <li level="2">
+      <a href="#_nesting_with_taking_grain_direction_rolling_direction_into_account">Nesting with taking grain direction (rolling direction) into account</a>
+    </li>
+    <li level="2">
+      <a href="#_nesting_based_on_priority_of_parts">Nesting based on priority of parts</a>
+    </li>
+    <li level="2">
+      <a href="#_automatic_twinline_nesting">Automatic TwinLine Nesting</a>
+    </li>
+    <li level="2">
+      <a href="#_nesting_a_partly_filled_sheet">Nesting a partly filled sheet</a>
+    </li>
+    <li level="2">
+      <a href="#_nesting_on_non_rectangular_sheets_or_sheets_with_holes">Nesting on non-rectangular sheets or sheets with holes</a>
+    </li>
+    <li level="2">
+      <a href="#_sequencing_routing_optimization">Sequencing &amp; Routing optimization</a>
+    </li>
+    <li level="2">
+      <a href="#_automatic_adding_of_microjoint_to_a_hole_if_another_part_is_nested_in_it_on_layout">Automatic adding of microjoint to a hole if another part is nested in it (on layout)</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="setthelasertechnology.html">Set Laser Technology Table (LTT)</a></span>
+  <span class="next"><a href="automaticpartplacement.html">Automatic Part Placement</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co. KG. All rights reserved. </p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

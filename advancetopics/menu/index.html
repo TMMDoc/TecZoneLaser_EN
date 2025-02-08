@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Advanced Menu Options</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img1/logo1.png" width="103" height="34 " /></div>
+        <div><p>TecZone Laser Reference Manual </p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Welcome to TecZone Laser</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../intro/index.html">Introduction</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../intro/install.html">Installing TecZone Laser</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/ui.html">TecZone Laser User Interface</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/workflow.html">Workflow Panel</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/database.html">Machine Database</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../workflow/index.html">Basic Workflows</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../workflow/part/index.html">Part Workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../workflow/part/loadpart.html">Load Part</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/sketch.html">Sketch Mode</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/measure.html">Measure</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/modifythecutting.html">Modifying Laser Part</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/sequence.html">Sequence Navigator </a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/nc.html">NC Code Generation</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../workflow/job/index.html">Job workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../workflow/job/createjob.html">Create Job</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/setthelasertechnology.html">Set Laser Technology Table (LTT)</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/automaticpartplacement.html">Automatic Part Placement</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/manualpartplacement.html">Manual Part Placement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html">Advanced Topics</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="../geoimport.html">Geometry Import Options</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../advtooling/index.html">Advanced Tooling Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../advtooling/microjoint.html">Editing Microjoints</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/twinlinetooling.html">TwinLine</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/flyline.html">FlyLine</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/dimpleapproach.html">Dimple Approach</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/remaindersheets.html">Remainder Sheets</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/pieslug.html">Pie-Slug  Circular Holes </a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/avoidretooling.html">Avoid Retooling Pierces</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/finishingrules.html">Finishing Rules</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/cloneltt.html">Clone LTT</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../advnesting/index.html">Advanced Nesting Features</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../advnesting/mirror.html">Mirrored Parts</a></li>
+            <li><button class="tree blank"></button><a href="../advnesting/findpart.html">Find a Part in Nest Layout</a></li>
+            <li><button class="tree blank"></button><a href="../advnesting/fillerpartsjob.html">Filler parts in Nest Layout</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../advoptimization/index.html">Advanced Tooling Optimization</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../advoptimization/optimizingcontourquality.html"> Contour Quality</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/scrapcutting.html">Optimizing Stability with Scrap Cutting</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/influencingtiltingbehaviour.html">Optimizing Tilting Behaviour</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/spaceout.html">Space Out Slice Cuts to Avoid Collision</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/minimizelayouts.html">Minimize Number of Different Layouts</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/dynamiclevel.html">Dynamic Level Setting </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a class="active" href="index.html">Advanced Menu Options</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="contextsensitivemenues.html"> Context Sensitive Menus</a></li>
+            <li><button class="tree blank"></button><a href="hirarchicalsettingconcept.html">Hierarchy of Settings</a></li>
+            <li><button class="tree blank"></button><a href="multiselections.html">Multi-Selections</a></li>
+            <li><button class="tree blank"></button><a href="csv.html">CSV Output</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../manualsheetslice.html">Manual Sheet Slicing Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../textonparts.html">Text on Parts</a></li>
+        <li><button class="tree blank"></button><a href="../bevelcut.html">Bevel Cut</a></li>
+        <li><button class="tree blank"></button><a href="../detectline.html">DetectLine</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../applicationsettings/index.html">Application Settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../applicationsettings/cutcam/index.html">Cut CAM</a>
+          <ul class="hide">
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/layout/index.html">Layout</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/nesting.html">Nest Settings</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheet.html">Sheet</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/worksupport.html">Work Support</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/lasercam/index.html">Laser CAM</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/lasercam/sequence.html">Sequence</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutoutputs.html">Cut Outputs</a></li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutview.html">Cut View</a></li>
+      </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html">Advanced Topics</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">Advanced Menu Options</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Advanced Menu Options</h1>
+<div class="paragraph">
+<p>The Advanced Menu options describe the following topics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="contextsensitivemenues.html">Context Sensitive Menus</a></p>
+</li>
+<li>
+<p><a href="hirarchicalsettingconcept.html">Hierarchy of Settings</a></p>
+</li>
+<li>
+<p><a href="multiselections.html">Multi-Selections</a></p>
+</li>
+<li>
+<p><a href="csv.html">CSV Output</a></p>
+</li>
+</ul>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc"></aside>
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="../advoptimization/dynamiclevel.html">Dynamic Level Setting </a></span>
+  <span class="next"><a href="contextsensitivemenues.html"> Context Sensitive Menus</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co. KG. All rights reserved. </p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Optimizing Stability with Scrap Cutting</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img1/logo1.png" width="103" height="34 " /></div>
+        <div><p>TecZone Laser Reference Manual </p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Welcome to TecZone Laser</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../intro/index.html">Introduction</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../intro/install.html">Installing TecZone Laser</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/ui.html">TecZone Laser User Interface</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/workflow.html">Workflow Panel</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/database.html">Machine Database</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../workflow/index.html">Basic Workflows</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../workflow/part/index.html">Part Workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../workflow/part/loadpart.html">Load Part</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/sketch.html">Sketch Mode</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/measure.html">Measure</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/modifythecutting.html">Modifying Laser Part</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/sequence.html">Sequence Navigator </a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/nc.html">NC Code Generation</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../workflow/job/index.html">Job workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../workflow/job/createjob.html">Create Job</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/setthelasertechnology.html">Set Laser Technology Table (LTT)</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/automaticpartplacement.html">Automatic Part Placement</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/manualpartplacement.html">Manual Part Placement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html">Advanced Topics</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="../geoimport.html">Geometry Import Options</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../advtooling/index.html">Advanced Tooling Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../advtooling/microjoint.html">Editing Microjoints</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/twinlinetooling.html">TwinLine</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/flyline.html">FlyLine</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/dimpleapproach.html">Dimple Approach</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/remaindersheets.html">Remainder Sheets</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/pieslug.html">Pie-Slug  Circular Holes </a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/avoidretooling.html">Avoid Retooling Pierces</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/finishingrules.html">Finishing Rules</a></li>
+            <li><button class="tree blank"></button><a href="../advtooling/cloneltt.html">Clone LTT</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../advnesting/index.html">Advanced Nesting Features</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../advnesting/mirror.html">Mirrored Parts</a></li>
+            <li><button class="tree blank"></button><a href="../advnesting/findpart.html">Find a Part in Nest Layout</a></li>
+            <li><button class="tree blank"></button><a href="../advnesting/fillerpartsjob.html">Filler parts in Nest Layout</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html">Advanced Tooling Optimization</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="optimizingcontourquality.html"> Contour Quality</a></li>
+            <li><button class="tree blank"></button><a class="active" href="scrapcutting.html">Optimizing Stability with Scrap Cutting</a></li>
+            <li><button class="tree blank"></button><a href="influencingtiltingbehaviour.html">Optimizing Tilting Behaviour</a></li>
+            <li><button class="tree blank"></button><a href="spaceout.html">Space Out Slice Cuts to Avoid Collision</a></li>
+            <li><button class="tree blank"></button><a href="minimizelayouts.html">Minimize Number of Different Layouts</a></li>
+            <li><button class="tree blank"></button><a href="dynamiclevel.html">Dynamic Level Setting </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../menu/index.html">Advanced Menu Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../menu/contextsensitivemenues.html"> Context Sensitive Menus</a></li>
+            <li><button class="tree blank"></button><a href="../menu/hirarchicalsettingconcept.html">Hierarchy of Settings</a></li>
+            <li><button class="tree blank"></button><a href="../menu/multiselections.html">Multi-Selections</a></li>
+            <li><button class="tree blank"></button><a href="../menu/csv.html">CSV Output</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../manualsheetslice.html">Manual Sheet Slicing Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../textonparts.html">Text on Parts</a></li>
+        <li><button class="tree blank"></button><a href="../bevelcut.html">Bevel Cut</a></li>
+        <li><button class="tree blank"></button><a href="../detectline.html">DetectLine</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../applicationsettings/index.html">Application Settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../applicationsettings/cutcam/index.html">Cut CAM</a>
+          <ul class="hide">
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/layout/index.html">Layout</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/nesting.html">Nest Settings</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheet.html">Sheet</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/worksupport.html">Work Support</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/lasercam/index.html">Laser CAM</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/lasercam/sequence.html">Sequence</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutoutputs.html">Cut Outputs</a></li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutview.html">Cut View</a></li>
+      </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html">Advanced Topics</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">Advanced Tooling Optimization</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="scrapcutting.html">Optimizing Stability with Scrap Cutting</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Optimizing Stability with Scrap Cutting</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Holes can be scrap cut automatically without
+any manual input using finishing rules. Scrap cutting will help you reduce the collision risk by cutting larger cutouts.
+With an overlay of several rules, you could avoid having small holes
+affected by the finishing rule.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scrapping_a_hole_by_slicing">Scrapping a Hole by Slicing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is possible to generate tool to slice and destroy a
+hole. The hole is sliced into smaller pieces, which can then drop through
+the slats. You can create this tooling from the 'Contour' editor (the
+same editor from where you can add and remove wirejoints) to a contour.
+These options are available only for closed inner contours.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ne30.png" alt="ne30" width="20%"></span>
+<span class="image"><img src="img/ne32.png" alt="ne32" width="25%"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Create Scrap Tooling:</strong> Click on this tooling to
+create tooling that slices the hole into smaller pieces. Any existing
+micro-joints on the contour will be removed. It is because a contour
+that is wirejointed cannot be scrapped. Conversely, if you add a
+wirejoint to a contour that is scrapped, the software will
+automatically delete the scrap tooling.</p>
+</div>
+<div class="paragraph">
+<p><strong>Delete Scrap Tooling:</strong> This deletes existing
+scrap tooling for the selected contour. This button is enabled only if
+the contour has any existing scrap tooling assigned to it. Below, you can
+see a circle hole being scrapped into smaller pieces with a grid.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne31.png" alt="ne31">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne33.png" alt="ne33">
+</div>
+</div>
+<div class="paragraph">
+<p>The above parameters control this tooling
+scrap grid cell width.</p>
+</div>
+<div class="paragraph">
+<p>This is the width of each
+cell in the grid that is created by the tooling. The value entered here
+must be such that the resultant square is guaranteed to fall through the
+slats, irrespective of its position.</p>
+</div>
+<div class="paragraph">
+<p>There are two ways to define the scrap cutting:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>within the part</p>
+</li>
+<li>
+<p>on a complete nest</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_the_manual_way_to_implement_scrap_cutting_into_a_job">The manual way to implement scrap cutting into a job:</h3>
+<div class="paragraph">
+<p>Click on the contour you want to toggle this
+setting.
+Then, the <strong>Laser Cut</strong> menu will appear. Further, you have to open
+the <strong>Contour</strong> menu and from there select <strong>Scrap Cut</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sc81.png" alt="image" width="629" height="354">
+</div>
+</div>
+<div class="paragraph">
+<p>Here, you get access to the most important settings you want to
+apply to your part.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use delete in order to remove an existent
+scrap cut.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Condition</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the desired condition of your scrap cut.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Large</p>
+</li>
+<li>
+<p>Medium</p>
+</li>
+<li>
+<p>Small</p>
+</li>
+<li>
+<p>Vaporize</p>
+</li>
+<li>
+<p>Mark</p>
+</li>
+<li>
+<p>Dot-Mark</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Approach length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the distance of the pierce
+point (for the step cuts) from the actual contour. After piercing, the
+laser will approach the contour and then, at an appropriate distance
+(determined by the kerf width and slope of the contour at that place), makes
+a 180 turn and continue cutting the stairs that start at that level.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Grid Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The lower the number, the more grids
+you get.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="img/ne42.png" alt="ne42" width="45%"></span>
+<span class="image"><img src="img/scrapcut.png" alt="scrapcut"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_automatic_way_to_implement_scrap_cut_into_a_job">The automatic way to implement scrap cut into a job:</h3>
+<div class="paragraph">
+<p>There is a second way to implement a scrap cut to your part or
+to your whole job via finishing rules. In order to follow that,
+you&#8217;ll need to work with the finishing rules. You can find these settings by
+clicking <strong>Settings &#8594; Cut Settings</strong>. You need then
+to add the scrap cut as a new finishing rule. You can proceed like that
+by pressing the " " button and then select <strong>cut up scrap</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne43.png" alt="ne43">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/newitem98.png" alt="newitem98">
+</div>
+</div>
+<div class="paragraph">
+<p>The final step is to update the changes made by recomputing the tooling.</p>
+</div>
+<div class="paragraph">
+<p>Shortcut key is <kbd>A</kbd>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne27.png" alt="ne27" width="40%">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_scrapping_a_hole_by_slicing">Scrapping a Hole by Slicing</a>
+    </li>
+    <li level="2">
+      <a href="#_the_manual_way_to_implement_scrap_cutting_into_a_job">The manual way to implement scrap cutting into a job:</a>
+    </li>
+    <li level="2">
+      <a href="#_the_automatic_way_to_implement_scrap_cut_into_a_job">The automatic way to implement scrap cut into a job:</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="optimizingcontourquality.html"> Contour Quality</a></span>
+  <span class="next"><a href="influencingtiltingbehaviour.html">Optimizing Tilting Behaviour</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co. KG. All rights reserved. </p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,163 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_sheet_cutting_rules">Sheet Cutting Rules</a></li>
+<li><a href="#_sheet_cut_parameters">Sheet Cut Parameters</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_sheet_cutting_rules">Sheet Cutting Rules</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/skeletoncuts.png" alt="skeletoncuts">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Slice sheet Skeleton</strong>:
+If you turn this option on, TecZone Laser will
+automatically add spaced horizontal and vertical cuts to the layout. The
+slice lines are added from bottom left corner of the sheet. If a slice
+line passes through some parts, TecZone Laser will automatically detect this, and
+add multiple slice lines to slice out only the skeleton sheet left
+between the parts.</p>
+</div>
+<div class="paragraph">
+<p><strong>X &amp; Y Spacing</strong>:
+This is the spacing between
+vertical and horizontal slice lines respectively.</p>
+</div>
+<div class="paragraph">
+<p><strong>Create remainder sheet</strong>:
+A remainder sheet creates a clean cut to separate the remainder
+sheet from the skeleton.</p>
+</div>
+<div class="paragraph">
+<p><strong>Minimum remainder sheet width</strong>: Even if the above
+is checked, a final cut will be added only when the width of the unused
+sheet created by the cut is greater than or equal to this value.</p>
+</div>
+<div class="paragraph">
+<p><strong>Final cut X offset</strong>: This is the distance from
+the right most extreme of part tooling to the final vertical cut that
+creates the remnant sheet.</p>
+</div>
+<div class="paragraph">
+<p><strong>Microjoint spacing on long cuts</strong>:
+TecZone Laser has the ability to create microjoints on sheet cuts automatically. User can specify the microjoints spacing distance under <strong>Sheet cutting rules</strong> in settings. Microjoints will be inserted into any cut that is longer than this length. By default, this setting is set to 0 mm, which means that microjoints are not required on sheet cuts.</p>
+</div>
+<div class="paragraph">
+<p>Two kinds of microjoints are possible on sheet cuts; <strong>hard</strong> and <strong>nano</strong>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+By default hard microjoints are created unless nano is preferred.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Even for hard microjoints, piercing will happen on the line. There will be no approach path. However, if the LTT recommends a reduced speed approach, then a part of the line will be cut at reduced speed after the microjoint.</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark Remainder Sheet</strong>:
+TecZone Laser can mark the remainder sheet with the material name, thickness and size.</p>
+</div>
+<div class="paragraph">
+<p>If this option is selected, marking will be added if there are remainder sheet cut(s) on the layout. If the remainder sheet cut is removed due to some change in the settings, marking will also be removed. Marking will always be aligned along the sheet cut, positioned at its center. If there is not enough space to insert the text, TecZone Laser will automatically shrink the text size or change the orientation of the marking text.</p>
+</div>
+<div class="paragraph">
+<p>Marking can also be edited using the <strong>Laser Text</strong> settings. Changes applied to text, height and angle are remembered but the position is recomputed whenever the position of remainder cut(s) change.</p>
+</div>
+<div class="paragraph">
+<p><strong>Prefer remainder sheet on the long dimension</strong>:
+This option will be turned ON by default. If this option is turned ON, the nesting engine will pick the pattern with parts pushed along the larger dimension unless if the pattern with parts pushed along the shorter dimension saves 50% more sheet than the former. If this option is turned OFF, the nesting engine will pick the pattern that produces better remnant sheet (based on the area of the remnant sheet) irrespective of the nesting direction.</p>
+</div>
+<div class="paragraph">
+<p><strong>Process sheet cuts after all parts</strong>: By
+default, when sequencing, TecZone Laser will process the slice cuts before
+processing the tooling of the parts. This is usually a good idea, as the
+laser head can freely roam around the uncut sheet while making the slice
+cuts. However, if you want to process the slice cuts at the end, after
+processing all parts, check this option. The following parameters effect
+how each individual slice cut is programmed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sheet_cut_parameters">Sheet Cut Parameters</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/sheetpara.png" alt="sheetpara">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Microjoint gap at sheet edge</strong>:
+Set this to a value greater than zero if you want a small web left at
+the points where the slice cut touches the sheet edge.</p>
+</div>
+<div class="paragraph">
+<p><strong>Microjoint gap at part edge</strong>:
+Set this to a
+value greater than zero if you want a small web left at the points where
+the slice cut touches the part edge.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pierce distance from part edge</strong>:
+This is the
+distance of the pierce point from the part edgeIf it is a non-zero
+value, TecZone Laser will pierce this distance away from the edge, then move
+towards the edge, before turning 180 degrees right at the edge,
+retracing the approach it made, to finish the main cut.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne45.bmp" alt="image" width="267" height="85">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Measure distance from sheet edge</strong>: If no
+wirejoint is being created at the sheet edge, it implies that the
+machine has to cut the sheet through till the end. But that cannot be
+done with height regulation on, as it will risk the machine head
+collapsing into the machine bed after the sheet. This parameter
+identifies the distance before the sheet edge where the laser head
+height is locked and distance regulation is turned off. When starting a
+cut at sheet edge, the machine will actually reach the measuring point
+defined by this parameter, measure the sheet height, lock its head Z
+position, move out of the sheet, switch the laser on and then start
+cutting with distance regulation off until it again reaches the same
+measuring point.</p>
+</div>
+<div class="paragraph">
+<p><strong>Overtravel after sheet edge</strong>: This is the
+amount by which the machine head travels beyond the sheet edge with
+laser on but distance regulation off. You can edit these parameters for
+individual slice cut segment by clicking and selecting them. A snapshot
+of that editor is shown on the right. Here you can change the laser
+condition or pierce type for the selected slice segment(s)You can also
+flip the direction by clicking on the 'Flip Direction' button. When a
+slice line passes through parts, it is broken down into multiple
+segments. You can navigate to the other segments of the same slice line
+by clicking on the <strong>Prev</strong> or <strong>Next</strong> button at the bottom. You can
+also go a level up and edit the entire slice line by clicking on the
+<strong>Slice Line</strong> button. Now you are editing the entire slice line. You
+can change the direction of cutting the entire slice line (made up of
+multiple segments) in one shot. More importantly, if you want to move
+the slice line position, you can do that by incrementing or decrementing
+the value of 'Position' field in the Slice Line editor. While you make
+these changes through this editor OR while you change the global rules &amp;
+parameters from the <strong>Layout Settings &#8594; Slice Skeleton panel</strong>, you will see
+that slice lines and cuts are instantly calculated and shown on the
+layout. More interestingly, you will find that the slice cuts are
+automatically adjusting even while you are adding, removing or moving
+parts on the layout.</p>
+</div>
+</div>
+</div>

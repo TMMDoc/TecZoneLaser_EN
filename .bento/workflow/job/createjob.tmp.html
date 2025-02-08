@@ -1,0 +1,250 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_job_j">Job <kbd>J</kbd></a></li>
+<li><a href="#_sheets_s">Sheets <kbd>S</kbd></a></li>
+<li><a href="#_parts_p">Parts <kbd>P</kbd></a></li>
+<li><a href="#_layouts_l">Layouts <kbd>L</kbd></a></li>
+<li><a href="#_summary_u">Summary <kbd>U</kbd></a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image right"><img src="img/newjob.png" alt="newjob"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To create a new job, select the New Job icon found on the left side of the launch screen or press <kbd>Alt</kbd> <kbd>F</kbd> <kbd>N</kbd> <kbd>J</kbd>.</p>
+</li>
+<li>
+<p>Fill in the <strong>Name</strong> and <strong>Job No.</strong> for the given job.</p>
+</li>
+<li>
+<p>The <strong>Machine</strong> drop-down menu will display the available machine list to run the job.</p>
+</li>
+<li>
+<p>The <strong>Material</strong> drop-down menu will display the available materials to run the job.</p>
+</li>
+<li>
+<p>The <strong>Thickness</strong> option is to specify the thickness of the sheet.</p>
+</li>
+<li>
+<p>The <strong>Treatment</strong> drop-down menu is to specify whether the material has any treatment.</p>
+</li>
+<li>
+<p>Select the <strong>Film</strong> checkbox if the material has a protective film.</p>
+</li>
+<li>
+<p>The <strong>Laser page (LTT)</strong> drop-down is to select a technology table to use, this is useful if you wish to switch between different gas types on the machine.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong> to see pages for <strong>Job</strong>, <strong>Sheets</strong>, <strong>Parts</strong>, <strong>Layouts</strong> and <strong>Summary</strong> settings.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Keyboard shortcuts:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Job</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>I</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sheets</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>S</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parts</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>P</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Layouts</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>L</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Summary</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>U</kbd></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_job_j">Job <kbd>J</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="img/job.png" alt="job"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Technology</strong> drop-down menu allows you to specify which technology table to be used. This is useful to switch between different gas types for the machine.</p>
+</li>
+<li>
+<p>Change <strong>Material</strong> and <strong>Machine</strong> to modify the material and machine being used.</p>
+</li>
+<li>
+<p>The <strong>part distance</strong> section is used to specify the minimum distance between parts in a layout.</p>
+</li>
+<li>
+<p>The <strong>start corner</strong> section is to specify the sheet start corner for nesting.</p>
+</li>
+<li>
+<p>Select <strong>allow nesting in holes</strong> checkbox for parts to be nested within holes.</p>
+</li>
+<li>
+<p>Select <strong>spread out parts on last layout with no remainder</strong> check box to spread out parts as much as possible on the sheet to minimise the sheet usage.</p>
+</li>
+<li>
+<p>Enable <strong>avoid placing thin long parts along slats</strong> to reduce the possibility of having thin long parts along slats as they are more likely to tilt or fall-through, this will nest long thin parts
+across slats.</p>
+</li>
+<li>
+<p>Enable <strong>minimise number of different layouts</strong> to minimise the number of layouts created and increase the packing of all other sheets used.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sheets_s">Sheets <kbd>S</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the sheets page, the user is able to edit the settings of the raw material.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/sheets.png" alt="sheets"></span></p>
+</div>
+<div class="paragraph">
+<p>The <strong>add</strong> option will add a new sheet. Choosing to <strong>import</strong> a sheet, the user can select 2D geometry files (.dxf .geo or .fx) which defines the outline and pre-cut holes of the sheet. The 2D geometry files must contain exactly one outer contour. It can also contain some inner contours which will be treated as pre-cut holes. When nesting, the software will ensure that no parts are intersecting with the defined pre-cut holes. A preview of the imported sheet geometry is shown at the right bottom corner of the sheets tab. The <strong>delete</strong> option will delete a sheet from the list.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>size</strong> section is to specify the width and height of the sheet.</p>
+</li>
+<li>
+<p><strong>Quantity</strong> is the total number of this specific sheet size the business has.</p>
+</li>
+<li>
+<p>The <strong>priority</strong> section is to prioritise certain sheet sizes over others to be used for nesting,
+sheets with lower priority number will be used first.</p>
+</li>
+</ul>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Priority</div>
+<div class="content">
+1 will be used before 5.
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Rolling Direction</strong> section is to specify the grain direction of the sheet.</p>
+</li>
+<li>
+<p>Enter the <strong>margins</strong> from the edge of the sheet (Left, Bottom, Right and Top).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parts_p">Parts <kbd>P</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="img/parts.png" alt="parts"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>add</strong> button allows you to add one or more part files. Files can also be dragged and dropped in to this tab.</p>
+</li>
+<li>
+<p><strong>Add Assembly&#8230;&#8203;</strong> option is used to import an assembly file and all the parts are added to a job.</p>
+</li>
+<li>
+<p><strong>Add Layout&#8230;&#8203;</strong> option imports .dxf files.</p>
+</li>
+<li>
+<p>The <strong>Import CSV&#8230;&#8203;</strong> button will Add parts from a CSV file.</p>
+</li>
+<li>
+<p><strong>Re-tool All</strong> will recompute nesting of all parts.</p>
+</li>
+<li>
+<p><strong>Quantity</strong> is the required quantity of the part. A minimum and a maximum quantity for the part can be stated by separating the two values with a hyphen. For example, 20-24 means at least 20 copies of this part will be nested, but not more than 24.</p>
+</li>
+<li>
+<p>Parts with lower <strong>priority</strong> number are preferably nested before parts of a higher priority number. Parts with priority number of 0 have opposite effect. They are of least priority.</p>
+</li>
+<li>
+<p><strong>Rotation</strong> is the rotation angle to be used in the nest.</p>
+</li>
+<li>
+<p><strong>Part grain preference</strong> is the required grain direction on the part. Select <em>None</em> for no preference. While nesting, the software will place the part in only the orientation that will give the required grain of the part. Rolling direction of the sheet(s) in the Sheets tab must also be specified.</p>
+</li>
+<li>
+<p>Parts with identical <strong>group</strong> number are placed together in the nesting. If there is no preference, lets say '0' for all parts, they are mixed together in the nesting layout.</p>
+</li>
+<li>
+<p>The <strong>twinline</strong> checkbox is to enable whether two parts can be cut using a common line.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_layouts_l">Layouts <kbd>L</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Layouts page displays part nest information along with options to edit the same.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/layouts.png" alt="layouts"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Add Blank</strong> option will add an empty sheet to the layouts page and the <strong>Delete</strong> option will remove selected layouts.</p>
+</li>
+<li>
+<p><strong>Move Up</strong> <span class="icon"><i class="fa fa-arrow-up"></i></span> and <strong>Move Down</strong> <span class="icon"><i class="fa fa-arrow-down"></i></span> selection will re-arrange the order of the selected layout.
+selection will move the order of the selected layout down.</p>
+</li>
+<li>
+<p>The <strong>Do Nesting&#8230;&#8203;</strong> option will start nesting the parts into layouts. If changes have been made to the parts, the layouts will need to be deleted and re-nested.</p>
+</li>
+<li>
+<p><strong>Save All&#8230;&#8203;</strong> saves all layouts into individual .fxlyt files.</p>
+</li>
+<li>
+<p><strong>Release NC</strong> will generate and save NC code and reports for all layouts.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary_u">Summary <kbd>U</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Summary</strong> page lists out the overall parts and sheets usage.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/summary.png" alt="summary"></span></p>
+</div>
+<div class="paragraph">
+<p>The left side shows the total number of <strong>parts</strong> nested, as well as the individual <strong>quantities</strong> of parts nested. The right side shows the total number of sheets used, as well as the individual sheet <strong>size</strong> quantities <strong>used</strong>. This section will also state the percentage of <strong>sheet utilisation</strong>.</p>
+</div>
+</div>
+</div>

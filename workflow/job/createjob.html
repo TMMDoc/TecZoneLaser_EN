@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Create Job</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img1/logo1.png" width="103" height="34 " /></div>
+        <div><p>TecZone Laser Reference Manual </p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Welcome to TecZone Laser</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../intro/index.html">Introduction</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../intro/install.html">Installing TecZone Laser</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/ui.html">TecZone Laser User Interface</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/workflow.html">Workflow Panel</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/database.html">Machine Database</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html">Basic Workflows</a>
+      <ul>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../part/index.html">Part Workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../part/loadpart.html">Load Part</a></li>
+            <li><button class="tree blank"></button><a href="../part/sketch.html">Sketch Mode</a></li>
+            <li><button class="tree blank"></button><a href="../part/measure.html">Measure</a></li>
+            <li><button class="tree blank"></button><a href="../part/modifythecutting.html">Modifying Laser Part</a></li>
+            <li><button class="tree blank"></button><a href="../part/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../part/sequence.html">Sequence Navigator </a></li>
+            <li><button class="tree blank"></button><a href="../part/nc.html">NC Code Generation</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html">Job workflow</a>
+          <ul>
+            <li><button class="tree blank"></button><a class="active" href="createjob.html">Create Job</a></li>
+            <li><button class="tree blank"></button><a href="setthelasertechnology.html">Set Laser Technology Table (LTT)</a></li>
+            <li><button class="tree blank"></button><a href="nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="automaticpartplacement.html">Automatic Part Placement</a></li>
+            <li><button class="tree blank"></button><a href="manualpartplacement.html">Manual Part Placement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../advancetopics/index.html">Advanced Topics</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../advancetopics/geoimport.html">Geometry Import Options</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../advancetopics/advtooling/index.html">Advanced Tooling Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/microjoint.html">Editing Microjoints</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/twinlinetooling.html">TwinLine</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/flyline.html">FlyLine</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/dimpleapproach.html">Dimple Approach</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/remaindersheets.html">Remainder Sheets</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/pieslug.html">Pie-Slug  Circular Holes </a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/avoidretooling.html">Avoid Retooling Pierces</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/finishingrules.html">Finishing Rules</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advtooling/cloneltt.html">Clone LTT</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../advancetopics/advnesting/index.html">Advanced Nesting Features</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../advancetopics/advnesting/mirror.html">Mirrored Parts</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advnesting/findpart.html">Find a Part in Nest Layout</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advnesting/fillerpartsjob.html">Filler parts in Nest Layout</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../advancetopics/advoptimization/index.html">Advanced Tooling Optimization</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/optimizingcontourquality.html"> Contour Quality</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/scrapcutting.html">Optimizing Stability with Scrap Cutting</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/influencingtiltingbehaviour.html">Optimizing Tilting Behaviour</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/spaceout.html">Space Out Slice Cuts to Avoid Collision</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/minimizelayouts.html">Minimize Number of Different Layouts</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/advoptimization/dynamiclevel.html">Dynamic Level Setting </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../advancetopics/menu/index.html">Advanced Menu Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../advancetopics/menu/contextsensitivemenues.html"> Context Sensitive Menus</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/menu/hirarchicalsettingconcept.html">Hierarchy of Settings</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/menu/multiselections.html">Multi-Selections</a></li>
+            <li><button class="tree blank"></button><a href="../../advancetopics/menu/csv.html">CSV Output</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../advancetopics/manualsheetslice.html">Manual Sheet Slicing Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../../advancetopics/textonparts.html">Text on Parts</a></li>
+        <li><button class="tree blank"></button><a href="../../advancetopics/bevelcut.html">Bevel Cut</a></li>
+        <li><button class="tree blank"></button><a href="../../advancetopics/detectline.html">DetectLine</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../applicationsettings/index.html">Application Settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../applicationsettings/cutcam/index.html">Cut CAM</a>
+          <ul class="hide">
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/layout/index.html">Layout</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/nesting.html">Nest Settings</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheet.html">Sheet</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/worksupport.html">Work Support</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/lasercam/index.html">Laser CAM</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/lasercam/sequence.html">Sequence</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutoutputs.html">Cut Outputs</a></li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutview.html">Cut View</a></li>
+      </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html">Basic Workflows</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">Job workflow</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="createjob.html">Create Job</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Create Job</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image right"><img src="img/newjob.png" alt="newjob"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To create a new job, select the New Job icon found on the left side of the launch screen or press <kbd>Alt</kbd> <kbd>F</kbd> <kbd>N</kbd> <kbd>J</kbd>.</p>
+</li>
+<li>
+<p>Fill in the <strong>Name</strong> and <strong>Job No.</strong> for the given job.</p>
+</li>
+<li>
+<p>The <strong>Machine</strong> drop-down menu will display the available machine list to run the job.</p>
+</li>
+<li>
+<p>The <strong>Material</strong> drop-down menu will display the available materials to run the job.</p>
+</li>
+<li>
+<p>The <strong>Thickness</strong> option is to specify the thickness of the sheet.</p>
+</li>
+<li>
+<p>The <strong>Treatment</strong> drop-down menu is to specify whether the material has any treatment.</p>
+</li>
+<li>
+<p>Select the <strong>Film</strong> checkbox if the material has a protective film.</p>
+</li>
+<li>
+<p>The <strong>Laser page (LTT)</strong> drop-down is to select a technology table to use, this is useful if you wish to switch between different gas types on the machine.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong> to see pages for <strong>Job</strong>, <strong>Sheets</strong>, <strong>Parts</strong>, <strong>Layouts</strong> and <strong>Summary</strong> settings.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Keyboard shortcuts:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Job</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>I</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sheets</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>S</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parts</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>P</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Layouts</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>L</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Summary</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>U</kbd></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_job_j">Job <kbd>J</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="img/job.png" alt="job"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Technology</strong> drop-down menu allows you to specify which technology table to be used. This is useful to switch between different gas types for the machine.</p>
+</li>
+<li>
+<p>Change <strong>Material</strong> and <strong>Machine</strong> to modify the material and machine being used.</p>
+</li>
+<li>
+<p>The <strong>part distance</strong> section is used to specify the minimum distance between parts in a layout.</p>
+</li>
+<li>
+<p>The <strong>start corner</strong> section is to specify the sheet start corner for nesting.</p>
+</li>
+<li>
+<p>Select <strong>allow nesting in holes</strong> checkbox for parts to be nested within holes.</p>
+</li>
+<li>
+<p>Select <strong>spread out parts on last layout with no remainder</strong> check box to spread out parts as much as possible on the sheet to minimise the sheet usage.</p>
+</li>
+<li>
+<p>Enable <strong>avoid placing thin long parts along slats</strong> to reduce the possibility of having thin long parts along slats as they are more likely to tilt or fall-through, this will nest long thin parts
+across slats.</p>
+</li>
+<li>
+<p>Enable <strong>minimise number of different layouts</strong> to minimise the number of layouts created and increase the packing of all other sheets used.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sheets_s">Sheets <kbd>S</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the sheets page, the user is able to edit the settings of the raw material.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/sheets.png" alt="sheets"></span></p>
+</div>
+<div class="paragraph">
+<p>The <strong>add</strong> option will add a new sheet. Choosing to <strong>import</strong> a sheet, the user can select 2D geometry files (.dxf .geo or .fx) which defines the outline and pre-cut holes of the sheet. The 2D geometry files must contain exactly one outer contour. It can also contain some inner contours which will be treated as pre-cut holes. When nesting, the software will ensure that no parts are intersecting with the defined pre-cut holes. A preview of the imported sheet geometry is shown at the right bottom corner of the sheets tab. The <strong>delete</strong> option will delete a sheet from the list.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>size</strong> section is to specify the width and height of the sheet.</p>
+</li>
+<li>
+<p><strong>Quantity</strong> is the total number of this specific sheet size the business has.</p>
+</li>
+<li>
+<p>The <strong>priority</strong> section is to prioritise certain sheet sizes over others to be used for nesting,
+sheets with lower priority number will be used first.</p>
+</li>
+</ul>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Priority</div>
+<div class="content">
+1 will be used before 5.
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Rolling Direction</strong> section is to specify the grain direction of the sheet.</p>
+</li>
+<li>
+<p>Enter the <strong>margins</strong> from the edge of the sheet (Left, Bottom, Right and Top).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parts_p">Parts <kbd>P</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="img/parts.png" alt="parts"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>add</strong> button allows you to add one or more part files. Files can also be dragged and dropped in to this tab.</p>
+</li>
+<li>
+<p><strong>Add Assembly&#8230;&#8203;</strong> option is used to import an assembly file and all the parts are added to a job.</p>
+</li>
+<li>
+<p><strong>Add Layout&#8230;&#8203;</strong> option imports .dxf files.</p>
+</li>
+<li>
+<p>The <strong>Import CSV&#8230;&#8203;</strong> button will Add parts from a CSV file.</p>
+</li>
+<li>
+<p><strong>Re-tool All</strong> will recompute nesting of all parts.</p>
+</li>
+<li>
+<p><strong>Quantity</strong> is the required quantity of the part. A minimum and a maximum quantity for the part can be stated by separating the two values with a hyphen. For example, 20-24 means at least 20 copies of this part will be nested, but not more than 24.</p>
+</li>
+<li>
+<p>Parts with lower <strong>priority</strong> number are preferably nested before parts of a higher priority number. Parts with priority number of 0 have opposite effect. They are of least priority.</p>
+</li>
+<li>
+<p><strong>Rotation</strong> is the rotation angle to be used in the nest.</p>
+</li>
+<li>
+<p><strong>Part grain preference</strong> is the required grain direction on the part. Select <em>None</em> for no preference. While nesting, the software will place the part in only the orientation that will give the required grain of the part. Rolling direction of the sheet(s) in the Sheets tab must also be specified.</p>
+</li>
+<li>
+<p>Parts with identical <strong>group</strong> number are placed together in the nesting. If there is no preference, lets say '0' for all parts, they are mixed together in the nesting layout.</p>
+</li>
+<li>
+<p>The <strong>twinline</strong> checkbox is to enable whether two parts can be cut using a common line.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_layouts_l">Layouts <kbd>L</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Layouts page displays part nest information along with options to edit the same.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/layouts.png" alt="layouts"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Add Blank</strong> option will add an empty sheet to the layouts page and the <strong>Delete</strong> option will remove selected layouts.</p>
+</li>
+<li>
+<p><strong>Move Up</strong> <span class="icon"><i class="fa fa-arrow-up"></i></span> and <strong>Move Down</strong> <span class="icon"><i class="fa fa-arrow-down"></i></span> selection will re-arrange the order of the selected layout.
+selection will move the order of the selected layout down.</p>
+</li>
+<li>
+<p>The <strong>Do Nesting&#8230;&#8203;</strong> option will start nesting the parts into layouts. If changes have been made to the parts, the layouts will need to be deleted and re-nested.</p>
+</li>
+<li>
+<p><strong>Save All&#8230;&#8203;</strong> saves all layouts into individual .fxlyt files.</p>
+</li>
+<li>
+<p><strong>Release NC</strong> will generate and save NC code and reports for all layouts.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary_u">Summary <kbd>U</kbd></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Summary</strong> page lists out the overall parts and sheets usage.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/summary.png" alt="summary"></span></p>
+</div>
+<div class="paragraph">
+<p>The left side shows the total number of <strong>parts</strong> nested, as well as the individual <strong>quantities</strong> of parts nested. The right side shows the total number of sheets used, as well as the individual sheet <strong>size</strong> quantities <strong>used</strong>. This section will also state the percentage of <strong>sheet utilisation</strong>.</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_job_j">Job <kbd>J</kbd></a>
+    </li>
+    <li level="1">
+      <a href="#_sheets_s">Sheets <kbd>S</kbd></a>
+    </li>
+    <li level="1">
+      <a href="#_parts_p">Parts <kbd>P</kbd></a>
+    </li>
+    <li level="1">
+      <a href="#_layouts_l">Layouts <kbd>L</kbd></a>
+    </li>
+    <li level="1">
+      <a href="#_summary_u">Summary <kbd>U</kbd></a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="index.html">Job workflow</a></span>
+  <span class="next"><a href="setthelasertechnology.html">Set Laser Technology Table (LTT)</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co. KG. All rights reserved. </p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

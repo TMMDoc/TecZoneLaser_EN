@@ -1,0 +1,335 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_modifying_the_finishing_rules_for_single_part">Modifying the Finishing Rules (For Single Part)</a></li>
+<li><a href="#_modifying_the_finishing_rules_for_multi_parts">Modifying the Finishing Rules (For Multi Parts)</a>
+<ul class="sectlevel2">
+<li><a href="#_finishing_rules_to_prevent_tilting_parts">Finishing rules to prevent tilting parts</a></li>
+<li><a href="#_select_specific_parts_50mm_100mm">Select Specific Parts (&gt; 50mm &lt; 100mm)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Finishing rules define all processes done automatically
+after nesting.
+They have many utilities, including preventing collisions, restoring
+balance to tilting parts, and making optimal use of the entire surface of
+a worksheet. The user can add, remove or modify
+rules. The
+order of rules in this list is important; while auto tooling. When TecZone Laser
+Cut finishes generating tooling for a contour, it checks this contour
+against each rule in this list, starting at the first rule. If the shape
+matches any rule, the corresponding action is applied; the software does
+not process any further rules for this contour. The checkbox at the
+beginning of each row can be used to temporarily disable any rule
+without having to delete it.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These finishing rules are applied at
+the time of auto tooling a part.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Hence, any change made here will take
+effect only when you recompute tooling. These settings have no effect
+whatever at the layout level.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne7.bmp" alt="image" width="470" height="88">
+</div>
+</div>
+<div class="paragraph">
+<p>To add a rule, you have to choose three parameters:</p>
+</div>
+<div class="paragraph">
+<p><strong>Contour:</strong> The type of contour Inner vs Outer.
+Stable-on-slats vs Unstable-on-slats Colliding or not. The available
+options for selecting a contour are discussed in more detail in a table
+following this list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Size:</strong> The maximum limiting size of contours
+for which this rule applies. You can either type in the size in the form
+of <strong>width x height</strong> or type in just one number if both width and height
+have the same value.</p>
+</div>
+<div class="paragraph">
+<p><strong>Action:</strong> The action to perform micro-joint,
+scrap cut etc. The complete list of available actions is discussed later
+in this document.</p>
+</div>
+<div class="paragraph">
+<p>Finishing rules define all processes done automatically after nesting and have many benefits,including <strong>collision prevention</strong>, <strong>restoration</strong> to balance potential <strong>tilting</strong> of parts, and making <strong>optimal use</strong> of an entire worksheet surface.</p>
+</div>
+<div class="paragraph">
+<p>When auto-tooling, the order of rules in this list is important. When TecZone Laser generates tooling for a contour, it checks this contour against each rule in the list, starting from the first rule. If the shape matches any rule, the corresponding action is applied; the software does not process any further rules for this contour. The checkbox at the beginning of each row can be used to temporarily disable any rule without having to delete it.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These finishing rules are applied at the time of auto tooling a part. Hence, any change made here will take effect only when you recompute the tooling. These settings have no effect whatsoever at the layout level.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="img/co197.png" alt="co197"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Contours</strong> are selected based on the below filters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>All</strong> - Contours are not filtered based on contour type if 'All' is the selected option for contour type.</p>
+</li>
+<li>
+<p><strong>Inner</strong> - All inner contours of a part are eligible for applying this rule.</p>
+</li>
+<li>
+<p><strong>Outer</strong> - All outer contours of a part are eligible for applying this rule.</p>
+</li>
+<li>
+<p><strong>Stable</strong> - All contours (inner as well as outer) that will remain stable on slats are
+eligible.</p>
+</li>
+<li>
+<p><strong>Stable Inner</strong> - All inner contours will remain stable on slats.</p>
+</li>
+<li>
+<p><strong>Stable Outer</strong> - All outer contours will remain stable on slats.</p>
+</li>
+<li>
+<p><strong>Unstable</strong> - All contours (inner as well as outer) that will either tip or fall through the slats are eligible.</p>
+</li>
+<li>
+<p><strong>Unstable Inner</strong> - All inner contours that are unstable on slats.</p>
+</li>
+<li>
+<p><strong>Unstable Outer</strong> - All outer contours that are unstable on slats.</p>
+</li>
+<li>
+<p><strong>Colliding</strong> - All unstable contours that are too close to the other contours of the part. If this contour were cut first, an adjacent contour could not be cut without the risk of head collision with tipping contour.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Contours that are stable on slats are never considered to be colliding.</p>
+</li>
+<li>
+<p>If an inner contour is too close to another inner contour, both unstable, then both
+will be marked as colliding.</p>
+</li>
+<li>
+<p>If an inner contour is too close to an outer contour, only the inner contour will be
+marked as colliding. It is unnecessary to mark the outer contour as colliding as it will almost always be cut after the inner contour.</p>
+</li>
+<li>
+<p>The new parameter <strong><em>Allowance</em></strong> when routing around tipping holes is used to decide if
+two contours are too close.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Colliding Inner</strong> - All inner contours that are colliding.</p>
+</li>
+<li>
+<p><strong>Colliding Outer</strong> - All outer contours that are colliding.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Size</strong> - The maximum limiting size of contours for which this rule applies. You can either type in the size in the form of "<em>width</em> x <em>height</em>" or type in just one number if both width and height have the same value.</p>
+</li>
+<li>
+<p><strong>Action</strong>
+<span class="image right"><img src="img/ac194.png" alt="ac194"></span></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No special action is taken.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Auto microjoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applies micro-joint(s) on the
+contourSoftware will automatically decide how many micro-joints are
+required based on the parameter Maximum allowed dip into slats.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Cut up scrap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cut larger cut outs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">One microjoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly one microjoint on
+the contour.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Two microjoints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly two
+microjoints on the contour.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Three microjoints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly three
+microjoints on the contour.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modifying_the_finishing_rules_for_single_part">Modifying the Finishing Rules (For Single Part)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Recompute &#8594; Tooling: Drop existing tooling.</p>
+</div>
+<div class="paragraph">
+<p>On the bottom of the screen will appear a notification that confirms the done operation(s).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fr13.png" alt="fr13">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fr14.png" alt="fr14">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modifying_the_finishing_rules_for_multi_parts">Modifying the Finishing Rules (For Multi Parts)</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/fr15.png" alt="fr15">
+</div>
+<div class="title">Figure 1. Step one</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fr16.png" alt="fr16">
+</div>
+<div class="title">Figure 2. Step two</div>
+</div>
+<div class="sect2">
+<h3 id="_finishing_rules_to_prevent_tilting_parts">Finishing rules to prevent tilting parts</h3>
+<div class="imageblock">
+<div class="content">
+<img src="img/fr17.png" alt="fr17">
+</div>
+</div>
+<div class="paragraph">
+<p>TecZone Laser recognizes by doing precise calculations that some
+parts could tilt on the layout sheet. This is why setting up the sheet
+details like loading tolerance are extremely important. TecZone Laser
+Cut will mark with red color the contours
+considered unstable, so you&#8217;ll be able to adjust the finishing rules in
+order to avoid possible accidents while laser cutting.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on the CAM Settings (finishing rules) so that you can access the
+controls.</p>
+</li>
+<li>
+<p>Press the <span class="image"><img src="img/circle-plus.png" alt="circle plus" width="18"></span> sign
+and to add the first rule i.e., for the unstable inner contour, we would
+like to have the ''cut up scrap'' as action applied. Whereas the
+''Size'' parameter also needs to be filled.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Measurements must be given either in millimetres or inches.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_select_specific_parts_50mm_100mm">Select Specific Parts (&gt; 50mm &lt; 100mm)</h3>
+<div class="paragraph">
+<p>Let&#8217;s say we want to select all parts that are larger than 50 mm
+and smaller than 100 mm. Because there are several ways to understand the
+given problem, we propose three different options in terms of the type of
+contour chosen that solves the problem.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The size parameter is always less than or equal to the
+user&#8217;s given value.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Whole Part Selection together with similar parts (Outer
+Contour).</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/fr18.png" alt="fr18">
+</div>
+</div>
+<div class="paragraph">
+<p>With that in mind, we have to set this through three finishing
+rules that keeps in focus the outer contour.
+First of all, we have to define a piece size limit of 9999 millimeters (a
+limit rarely reached in our examples). The second rule has to cover the
+parts with a maximum length of 100 mm. We do so by setting the parameter
+"Size" as 100x100. Therefore, remains to select the parts smaller than 50
+millimetres and that means exactly "50 x 50" for the size parameter.
+Always remember that "n" millimeters must be given in a
+"width x height" format. The image below
+shows how the finishing rules table should look like.</p>
+</div>
+</div>
+</div>
+</div>

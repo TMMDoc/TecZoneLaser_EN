@@ -1,0 +1,243 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_layouts">Layouts</a>
+<ul class="sectlevel2">
+<li><a href="#_spread_out_parts_on_a_nested_layout_if_there_is_no_remainder_sheet">Spread-out parts on a nested layout if there is no remainder sheet</a></li>
+<li><a href="#_option_to_prefer_placing_thin_long_parts_across_slats_rather_than_along_slats">Option to prefer placing thin long parts across slats rather than along slats</a></li>
+<li><a href="#_nesting_with_taking_grain_direction_rolling_direction_into_account">Nesting with taking grain direction (rolling direction) into account</a></li>
+<li><a href="#_nesting_based_on_priority_of_parts">Nesting based on priority of parts</a></li>
+<li><a href="#_automatic_twinline_nesting">Automatic TwinLine Nesting</a></li>
+<li><a href="#_nesting_a_partly_filled_sheet">Nesting a partly filled sheet</a></li>
+<li><a href="#_nesting_on_non_rectangular_sheets_or_sheets_with_holes">Nesting on non-rectangular sheets or sheets with holes</a></li>
+<li><a href="#_sequencing_routing_optimization">Sequencing &amp; Routing optimization</a></li>
+<li><a href="#_automatic_adding_of_microjoint_to_a_hole_if_another_part_is_nested_in_it_on_layout">Automatic adding of microjoint to a hole if another part is nested in it (on layout)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_layouts">Layouts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Laser has a powerful nesting engine which places your parts in the most efficient way on a sheet.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/n165.png" alt="n165">
+</div>
+<div class="title">Figure 1. Nesting in Job mode</div>
+</div>
+<div class="sect2">
+<h3 id="_spread_out_parts_on_a_nested_layout_if_there_is_no_remainder_sheet">Spread-out parts on a nested layout if there is no remainder sheet</h3>
+<div class="imageblock">
+<div class="content">
+<img src="img/spreadparts.png" alt="spreadparts">
+</div>
+</div>
+<div class="paragraph">
+<p>TecZone Laser&#8217;s nesting engine automatically spreads-out parts on fully
+filled sheetsIt analyses the layout and checks if spreading out will
+make a meaningful difference to part spacing and if it does, it will
+spread out the partsThis automatically improves sheet stability.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne57.png" alt="ne57">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_option_to_prefer_placing_thin_long_parts_across_slats_rather_than_along_slats">Option to prefer placing thin long parts across slats rather than along slats</h3>
+<div class="paragraph">
+<p>It is great if the nesting engine is aware of laser processing
+implications when it is positioning a part. TecZone Laser&#8217;s homegrown nesting
+engine is aware of the slat configuration and automatically chooses
+prefers across the slat orientations for some parts (possibly at the
+cost of nesting efficiency).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne56.png" alt="ne56">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne55.png" alt="ne55">
+</div>
+<div class="title">Figure 2. Without this option checked</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne54.png" alt="ne54">
+</div>
+<div class="title">Figure 3. With this option checked</div>
+</div>
+<div class="paragraph">
+<p>These options also can be set in <strong>Settings &#8594; Cut CAM &#8594; Nesting</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne26.png" alt="ne26" width="75%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nesting_with_taking_grain_direction_rolling_direction_into_account">Nesting with taking grain direction (rolling direction) into account</h3>
+<div class="paragraph">
+<p>User can specify the preferred material grain on the part and
+TecZone Laser will ensure that the part is placed in the right orientation on the
+blank sheet, taking the blank sheet&#8217;s rolling direction into account.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne52.png" alt="ne52">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne51.png" alt="ne51">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nesting_based_on_priority_of_parts">Nesting based on priority of parts</h3>
+<div class="paragraph">
+<p>TecZone Laser can nest parts based on their priority. Parts with lower priority number are preferably nested before parts with higher priority number. The exception to this rule is when parts have 0 as priority number. Such parts have least priority.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/part.png" alt="part">
+</div>
+<div class="title">Figure 4. Parts for nesting without priority</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PartLayout1.png" alt="PartLayout1" width="250"></span>
+<span class="image"><img src="img/PartLayout2.png" alt="PartLayout2" width="250"></span>
+<span class="image"><img src="img/PartLayout3.png" alt="PartLayout3" width="250"></span></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/PartPriority.png" alt="PartPriority">
+</div>
+<div class="title">Figure 5. Parts for nesting with priority</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PartPriority1.png" alt="PartPriority1" width="250"></span>
+<span class="image"><img src="img/PartPriority2.png" alt="PartPriority2" width="250"></span>
+<span class="image"><img src="img/PartPriority3.png" alt="PartPriority3" width="250"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automatic_twinline_nesting">Automatic TwinLine Nesting</h3>
+<div class="paragraph">
+<p>TecZone Laser nesting engine can generate good automatic twinline nest
+results, taking into considerations various twinline related
+sensitivities.</p>
+</div>
+<div class="paragraph">
+<p><strong>Consistent space between edges:</strong> When creating
+nesting cells (patterns that are repeated) the software ensures that the
+distance between part edges is either exactly equal to kerf width or the
+usual part gap.</p>
+</div>
+<div class="paragraph">
+<p><strong>Well aligned twinline edges:</strong> In the previous
+implementation, the twinlined edges were not overlapping completely,
+creating tiny, unmachinable nooks as shown in the snapshot belowThis
+should not happen now.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne50.png" alt="ne50">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>No tiny twinline segments:</strong> The software will
+never create tiny twinline segments shorter than 10mm.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne49.png" alt="ne49">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nesting_a_partly_filled_sheet">Nesting a partly filled sheet</h3>
+<div class="paragraph">
+<p>TecZone Laser can nest on a sheet partly filled. It can come in handy
+when a user wants to manually nest a portion of the layout and then want
+the software to automatically fill the rest of the sheet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nesting_on_non_rectangular_sheets_or_sheets_with_holes">Nesting on non-rectangular sheets or sheets with holes</h3>
+<div class="paragraph">
+<p>TecZone Laser can automatically nest on a non-rectangular remainder
+sheet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sequencing_routing_optimization">Sequencing &amp; Routing optimization</h3>
+<div class="paragraph">
+<p>Sequencing and routing optimization is much improved over
+previous CAM systems.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sequence within a part is optimized much better with the
+goal to minimize head repositioning time.</p>
+</li>
+<li>
+<p>Multiple sequences are computed for each part, each
+optimized for different scenarios on the layout. Depending on where the
+machine head is coming from and where it needs to go next, the order
+within a part could vary across instances of the same part.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Moving around cut holes (instead of raising head).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne48.png" alt="ne48">
+</div>
+</div>
+<div class="paragraph">
+<p>Sometimes, it is faster to quickly go around an obstructing
+hole with head down rather than lifting the head up. TecZone Laser can do that
+when it saves time and it is safe. For safety reasons, when routing
+around a hole that could have a tilted cutout, it applies greater
+margin, otherwise a smaller standard margin. Thus, TecZone Laser&#8217;s tipping
+analysis helps in optimizing routing and reduces processing time on the
+machine.</p>
+</div>
+<div class="paragraph">
+<p>Instant reading of head repositioning time to gauge effect of manual sequence and routing changes.</p>
+</div>
+<div class="paragraph">
+<p>The total time spent for head repositioning is a good metric to
+measure the quality of sequence and routing optimization. TecZone Laser
+calculates this time accurately and instantly.This helps the user gauge
+the impact of her changes to the sequence.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automatic_adding_of_microjoint_to_a_hole_if_another_part_is_nested_in_it_on_layout">Automatic adding of microjoint to a hole if another part is nested in it (on layout)</h3>
+<div class="paragraph">
+<p>A big hole inside a part could be evaluated as being stable at
+the part level. But on a layout, when other smaller parts are nested in
+this hole, it could become unstable. TecZone Laser can detect such situations and
+automatically add a microjoint. This is done dynamically even while the
+user is manually modifying the layout.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne47.png" alt="ne47">
+</div>
+</div>
+</div>
+</div>
+</div>

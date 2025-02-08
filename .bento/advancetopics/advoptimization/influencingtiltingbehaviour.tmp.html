@@ -1,0 +1,148 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_applying_microjoints_based_on_tilting_calculations">Applying Microjoints based on Tilting Calculations</a></li>
+<li><a href="#_eliminating_holes_that_can_cause_a_tilt">Eliminating Holes that can cause a Tilt</a></li>
+<li><a href="#_determine_number_of_required_microjoints">Determine Number of Required Microjoints</a></li>
+<li><a href="#_automatic_movement_of_the_approach_point_to_avoid_tilting">Automatic Movement of the Approach Point to avoid Tilting</a></li>
+<li><a href="#_process_stability">Process Stability</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_applying_microjoints_based_on_tilting_calculations">Applying Microjoints based on Tilting Calculations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The user can define hierarchical finishing rules that will
+determine how contours are finished. Whether they are microjoint,
+scrap-cut or left free on the table.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne80.png" alt="ne80">
+</div>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No special action is taken</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Auto microjoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applies microjoint(s) on the contour. Software will
+automatically decide how many microjoints are required based on the
+parameter. <span class="image"><img src="img/ne79.png" alt="ne79"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Cut up scrap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cut up the contours into smaller pieces so that they fall through the slats.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">One microjoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly one microjoint on
+the contour.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Two microjoints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly two microjoints on
+the contour.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Three microjoints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly three
+microjoints on the contour.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne78.png" alt="ne78">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_eliminating_holes_that_can_cause_a_tilt">Eliminating Holes that can cause a Tilt</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the finishing rules suggested above, the user can decide to
+scrap-cut holes that can collide with the machine head. TecZone Laser will
+automatically apply this rule and create scrap tooling, where necessary, when loading the part into the job.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_determine_number_of_required_microjoints">Determine Number of Required Microjoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Laser can determine the number of microjoints required on a
+contour (based on contour geometry, slat configuration, material, thickness, and gas pressure). Usually, one microjoint is enough, but in some cases
+(typically, long but thin contours), more microjoints might be required
+to provide enough support to the contour so that it does not bend down
+too much into the slats (or even break the microjoint) due to the
+torque created by its own weight or gas blowing over it.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne77.png" alt="ne77">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_automatic_movement_of_the_approach_point_to_avoid_tilting">Automatic Movement of the Approach Point to avoid Tilting</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/ne39.bmp" alt="ne39">
+</div>
+</div>
+<div class="paragraph">
+<p>Sometimes choosing a different approach point can change an
+unstable contour into a stable contour. TecZone Laser can detect such situations
+and automatically adjust the approach point.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_process_stability">Process Stability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The process stability is influenced mainly by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tilting parts that might tip up and collide with the cutting
+head.</p>
+</li>
+<li>
+<p>Thermal tensions that bend parts up and collide with the
+cutting head.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parts that are a risk are highlighted in red in the sequencing
+overview.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne40.png" alt="ne40">
+</div>
+</div>
+<div class="paragraph">
+<p>A common approach to increasing process stability, for example are microjoints and scrap cutting.</p>
+</div>
+</div>
+</div>

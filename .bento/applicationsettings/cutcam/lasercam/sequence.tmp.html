@@ -1,0 +1,166 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_laser_sequence">Laser Sequence</a>
+<ul class="sectlevel2">
+<li><a href="#_laser_processing_sequence">Laser Processing Sequence</a></li>
+<li><a href="#_laser_sequence_2">Laser Sequence</a></li>
+</ul>
+</li>
+<li><a href="#_route_traverse">Route Traverse</a></li>
+<li><a href="#_option_laser_heads">Option - Laser heads</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/lasersequence.png" alt="lasersequence">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_laser_sequence">Laser Sequence</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_laser_processing_sequence">Laser Processing Sequence</h3>
+<div class="paragraph">
+<p>Use this to define the laser processing sequence, this is
+useful if you have any piercing or marking that needs to be processed first.</p>
+</div>
+<div class="paragraph">
+<p><strong>Standard</strong> - No specific order is enforced between marking and cutting.</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark Cut</strong> - Does all marking first and then cutting.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pierce Cut</strong> - Splits all laser tooling into piercing operation and then cutting operation.
+All pierces are done first followed by cut/mark operations.</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark Pierce Cut</strong> - Like above but all markings are finished first.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pierce Mark Cut</strong> - Like the third option but between cut &amp; mark, marking is done first.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_laser_sequence_2">Laser Sequence</h3>
+<div class="paragraph">
+<p>This drop-down gives options to choose the laser sequence.</p>
+</div>
+<div class="paragraph">
+<p><strong>Partwise</strong> - If this choice is selected, sequencing is done part wise. Once operations on
+a part starts, it will proceed to another part only after all operations on that part are
+finished. It is not necessary that the sequence within each part is same across all its
+instances on the layout. Depending on where the machine head is coming from and
+where it needs to go next, the order within a part could vary across instances of the
+same part.</p>
+</div>
+<div class="paragraph">
+<p><strong>Partwise Native</strong> - If this option is selected, sequencing is done partwise. Once
+operations on a part start, it will proceed to another part only after all operations on
+that part are finished. The sequence within a part and all its instances will be same as
+the part native tooling.</p>
+</div>
+<div class="paragraph">
+<p><strong>Inner First</strong> - All tooling on inner contours are sequenced first followed by the outer
+contours.</p>
+</div>
+<div class="paragraph">
+<p><strong>Sort by contour size</strong> - All tooling on inner contours is processed before outer contours
+and will be sorted based on contour size.</p>
+</div>
+<div class="paragraph">
+<p><strong>Do pre-pierce part-by-part</strong> - Pierce operations will be done partwise. Once all the piercing
+is done on a part, it will finish the cut before proceeding to the next part.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_route_traverse">Route Traverse</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/routetraverse.png" alt="routetraverse">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Move pierce points to reduce travel</strong> - This checkbox is to choose a different approach
+point location to reduce traverse distance.</p>
+</div>
+<div class="paragraph">
+<p><strong>Move pierce points to prevent tilting</strong> - This checkbox is to choose a different approach
+point location to avoid tipping of the cut-outs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Microjoint nested holes if tilting/falling through</strong> - This checkbox is to microjoint a
+contour with parts nested inside of them only if the contour is evaluated as a fall
+through or being tilted.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ignore holes smaller than this</strong> - Holes smaller than the given value are considered not big
+enough for the height sensor to dive the machine head into it and hence ignored.</p>
+</div>
+<div class="paragraph">
+<p><strong>Minimum cutting head height when traversing</strong> - Minimum head distance from the sheet
+when doing head-up traversal.</p>
+</div>
+<div class="paragraph">
+<p><strong>Max. head down traverse distance</strong> - The software automatically calculates a head down
+traverse limit based on nozzle distance from sheet. The lower of the calculated value and
+the value entered here will be used.</p>
+</div>
+<div class="paragraph">
+<p><strong>Route traverse lines around holes</strong> - Turn on to route the laser head around cut-outs, if
+possible, instead of lifting head up.</p>
+</div>
+<div class="paragraph">
+<p><strong>Allowance when routing around holes</strong> - When routing lines to avoid cut-outs, this
+distance will be maintained from the traverse path to the edge of a cut. If this value is
+too high to route traverse lines around the cut-outs, then those traverse lines will be
+processed with the machine head being raised.</p>
+</div>
+<div class="paragraph">
+<p><strong>Lift nozzle if routing penalty more than</strong> - This option is used to define if the nozzle should
+be lifted if the routing penalty is more than this value.</p>
+</div>
+<div class="paragraph">
+<p><strong>Allowance when routing around tilting holes</strong> - This option is to define the routing
+allowance around tilting holes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Always reposition with head-up between holes</strong> - This option should be checked if subprograms
+should be safe for post-production.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_option_laser_heads">Option - Laser heads</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This section is applicable when <strong>relevant option</strong> is selected.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/laserheads.png" alt="laserheads">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Cut with single head</strong> - This option is for dual head lasers to enable this to cut with a
+single laser head.</p>
+</div>
+</div>
+</div>

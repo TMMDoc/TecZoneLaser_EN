@@ -1,0 +1,224 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_auto_selection_between_safety_and_easy_strategy">Auto Selection between Safety and Easy Strategy</a>
+<ul class="sectlevel2">
+<li><a href="#_nanojoints_vs_microjoints_in_a_twinline_situation">Nanojoints vs Microjoints in a TwinLine Situation</a></li>
+<li><a href="#_manual_microjoints_for_twinline_groups">Manual microjoints for TwinLine groups</a></li>
+<li><a href="#_slowing_down_at_twinline_junctions">Slowing down at TwinLine junctions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>TwinLine</strong> is a method wherein the tool width is equal to the distance between the contour lines of two adjacent sections on the sheet during nesting. Thus, just one cut is used in the processing of these two contours.</p>
+</div>
+<div class="paragraph">
+<p>TwinLine leads to significant savings in terms of machine time
+and material usage.</p>
+</div>
+<div class="paragraph">
+<p>To ensure the stability of the
+twinlined parts on the slat pins and the ability to automatically add
+microjoints to twinline groups, TecZone Laser comes with multiple options to create optimal
+twinline groups.</p>
+</div>
+<div class="paragraph">
+<p><em>Slight marks of TwinLine could be seen on the edges.</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>One piece:</strong> In this strategy, the software will
+add microjoints such that the whole block, including any islands,
+remains attached to the sheet as a single piece.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne27.png" alt="ne27">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne26.png" alt="ne26">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>One free piece:</strong> Creating a twinline block
+tooling that holds up as a single piece not bound to the sheet skeleton.
+That is, there are no microjoints on the outer contour. Only on the
+islands and twinline edges.</p>
+</li>
+<li>
+<p><strong>Standard finishing rules:</strong> Standard finishing
+rules are applied to islands. Tipping and stability analysis will be
+done for islands, and if the finishing rules prescribe microjoints,
+microjoints will be added, and if they prescribe scrap-tooling,
+scrap-tooling will be applied (and the entire island will be broken
+down).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auto_selection_between_safety_and_easy_strategy">Auto Selection between Safety and Easy Strategy</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/ne18.png" alt="ne18">
+</div>
+</div>
+<div class="paragraph">
+<p>It is necessary for the software to support both the safety and
+easy strategy of twinline tooling. But TecZone Laser goes a step further and can
+analyze and automatically choose the right strategy for any given
+twinline group.</p>
+</div>
+<div class="paragraph">
+<p>There are three strategies:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>TIO (TwinLine-Island-Outer)
+strategy</strong>: In this strategy, the software will create three
+different kinds of tooling paths from a twinline block.<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>TwinLine: These are the twinline
+paths between overlapping edges of the adjacent parts. These are always
+open paths. Once the software detects these paths, they are cut first,
+before any other path.<br></p>
+</li>
+<li>
+<p>Island: These are sheet skeleton
+islands formed between parts of the block. These islands are cut next.
+Islands are always closed contours. Cutting an island always begins at a
+node that is already touched by a twinline path.<br></p>
+</li>
+<li>
+<p>Outer: There will always be one
+outer contour for a twinline block. This is always cut at the end. The
+software will approach this outer contour from the left-bottom or
+left-top, depending on the prescribed cutting direction (clockwise or
+anticlockwise) for outer contours in settings.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne15.png" alt="image" width="213" height="229">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p><strong>Partwise-safe strategy</strong>: This strategy is
+similar (probably not identical) to the safety strategy of
+Trutops/Boost. In this strategy, cutting progresses to the next part only
+after the current part is cut completely free. At junction nodes where
+adjacent parts touch, preparatory cuts are made. The purpose of these
+preparatory cuts is to avoid the laser head coming close to a part that is
+already cut (and possibly tilting).</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne16.png" alt="image" width="247" height="249">
+</div>
+</div>
+<div class="paragraph">
+<p>The software, when on islands, instead of just doing a precut, completely cuts the island free (as shown in the below image). If this is not done, when processing the last part, it is possible
+that the entire block is cut free before some inner islands are cut
+free.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne17.png" alt="image" width="259" height="259">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p><strong>Partwise strategy</strong>: This strategy is similar
+to the partwise-safe strategy, but there are no preparatory cuts. At
+junction nodes, cutting for the next part will resume 1.25 mm distance
+into the twinline path. That is, cutting will resume a little distance
+away from the junction node, again cutting a small portion of the cut
+path. This seems impossible for situations where parts could tilt, hence, it is recommended only for thick sheets where parts will not tilt. The user
+can choose the preferred strategy from the laser settings as shown in the
+screenshot below. The tooltip on the strategy explains the strategy and
+its applicability.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_nanojoints_vs_microjoints_in_a_twinline_situation">Nanojoints vs Microjoints in a TwinLine Situation</h3>
+<div class="paragraph">
+<p>On twinlined edges, only nanojoints (or piercing on contour)
+are possible. On the edges of an island or outer boundary, all types of
+joints (hard, soft, or nano) are possible. When applying the
+<em>One Piece strategy</em>, TecZone Laser will try to minimize
+the number of joints on the twinlined edge with the assumption that
+hard/soft joints (with an approach path) are preferred over nanojoints
+(where piercing is done on the contour). Nanojoints are shown with tiny
+yellow dots.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne25.png" alt="image" width="249" height="262">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne24.png" alt="image" width="330" height="342">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the preferred joint type is set to nano in settings,
+then some joints on islands/outer will also eventually be nanojoint.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_manual_microjoints_for_twinline_groups">Manual microjoints for TwinLine groups</h3>
+<div class="paragraph">
+<p>Apart from adding these microjoints automatically, the software
+allows for manually adding/removing microjoints anywhere on a twinline
+tool by just clicking.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_slowing_down_at_twinline_junctions">Slowing down at TwinLine junctions</h3>
+<div class="paragraph">
+<p>When cutting with TwinLine easy strategy, it is better if the
+cutting speed is reduced when crossing over already-cut edges.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne23.png" alt="image" width="326" height="323">
+</div>
+</div>
+</div>
+</div>
+</div>

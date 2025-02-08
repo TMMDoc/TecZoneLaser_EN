@@ -1,0 +1,628 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Bevel Cut</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img1/logo1.png" width="103" height="34 " /></div>
+        <div><p>TecZone Laser Reference Manual </p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../index.html">Welcome to TecZone Laser</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../intro/index.html">Introduction</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../intro/install.html">Installing TecZone Laser</a></li>
+        <li><button class="tree blank"></button><a href="../intro/ui.html">TecZone Laser User Interface</a></li>
+        <li><button class="tree blank"></button><a href="../intro/workflow.html">Workflow Panel</a></li>
+        <li><button class="tree blank"></button><a href="../intro/database.html">Machine Database</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../workflow/index.html">Basic Workflows</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../workflow/part/index.html">Part Workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../workflow/part/loadpart.html">Load Part</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/sketch.html">Sketch Mode</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/measure.html">Measure</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/modifythecutting.html">Modifying Laser Part</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/sequence.html">Sequence Navigator </a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/nc.html">NC Code Generation</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../workflow/job/index.html">Job workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../workflow/job/createjob.html">Create Job</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/job/setthelasertechnology.html">Set Laser Technology Table (LTT)</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/job/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/job/automaticpartplacement.html">Automatic Part Placement</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/job/manualpartplacement.html">Manual Part Placement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="index.html">Advanced Topics</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="geoimport.html">Geometry Import Options</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="advtooling/index.html">Advanced Tooling Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="advtooling/microjoint.html">Editing Microjoints</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/twinlinetooling.html">TwinLine</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/flyline.html">FlyLine</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/dimpleapproach.html">Dimple Approach</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/remaindersheets.html">Remainder Sheets</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/pieslug.html">Pie-Slug  Circular Holes </a></li>
+            <li><button class="tree blank"></button><a href="advtooling/avoidretooling.html">Avoid Retooling Pierces</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/finishingrules.html">Finishing Rules</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/cloneltt.html">Clone LTT</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="advnesting/index.html">Advanced Nesting Features</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="advnesting/mirror.html">Mirrored Parts</a></li>
+            <li><button class="tree blank"></button><a href="advnesting/findpart.html">Find a Part in Nest Layout</a></li>
+            <li><button class="tree blank"></button><a href="advnesting/fillerpartsjob.html">Filler parts in Nest Layout</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="advoptimization/index.html">Advanced Tooling Optimization</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="advoptimization/optimizingcontourquality.html"> Contour Quality</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/scrapcutting.html">Optimizing Stability with Scrap Cutting</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/influencingtiltingbehaviour.html">Optimizing Tilting Behaviour</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/spaceout.html">Space Out Slice Cuts to Avoid Collision</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/minimizelayouts.html">Minimize Number of Different Layouts</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/dynamiclevel.html">Dynamic Level Setting </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="menu/index.html">Advanced Menu Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="menu/contextsensitivemenues.html"> Context Sensitive Menus</a></li>
+            <li><button class="tree blank"></button><a href="menu/hirarchicalsettingconcept.html">Hierarchy of Settings</a></li>
+            <li><button class="tree blank"></button><a href="menu/multiselections.html">Multi-Selections</a></li>
+            <li><button class="tree blank"></button><a href="menu/csv.html">CSV Output</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="manualsheetslice.html">Manual Sheet Slicing Cuts</a></li>
+        <li><button class="tree blank"></button><a href="textonparts.html">Text on Parts</a></li>
+        <li><button class="tree blank"></button><a class="active" href="bevelcut.html">Bevel Cut</a></li>
+        <li><button class="tree blank"></button><a href="detectline.html">DetectLine</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../applicationsettings/index.html">Application Settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../applicationsettings/cutcam/index.html">Cut CAM</a>
+          <ul class="hide">
+            <li>
+              <button class="tree closed"></button>
+              <a href="../applicationsettings/cutcam/layout/index.html">Layout</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/nesting.html">Nest Settings</a></li>
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/sheet.html">Sheet</a></li>
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/worksupport.html">Work Support</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="tree closed"></button>
+              <a href="../applicationsettings/cutcam/lasercam/index.html">Laser CAM</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/lasercam/sequence.html">Sequence</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../applicationsettings/cutoutputs.html">Cut Outputs</a></li>
+        <li><button class="tree blank"></button><a href="../applicationsettings/cutview.html">Cut View</a></li>
+      </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="index.html">Advanced Topics</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="bevelcut.html">Bevel Cut</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Bevel Cut</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>To prepare a sheet metal edge for welding, fabricators often design bevel cuts on the sheet metal. Beveled edges increase the weld surface area, which facilitates material penetration on thick parts and makes welds stronger and more resistant to stress.</p>
+</div>
+<div class="paragraph">
+<p>Bevel cut is an optional feature for TruLaser machines that tilt the cutting unit for deep bevel cuts on parts. The required NC code will be generated by TecZone Laser.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bevelcut.png" alt="bevelcut" width="500">
+</div>
+<div class="title">Figure 1. Bevel Cut Part</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generating_bevel_cut">Generating Bevel Cut</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Chamfer option is enabled for sheet thickness greater than 3 mm.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When a laser machine with the bevel cut option is selected for tooling, the chamfer section becomes visible in the <strong>Laser Cut</strong> panel.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/chamfer0.png" alt="chamfer0"></span>    <span class="image"><img src="img/chamfer.png" alt="chamfer" width="400"></span></p>
+</div>
+<div class="paragraph">
+<p>The top and bottom chamfer angles are allowed in the range of <strong>0 to 45°</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Chamfer angle cannot be negative.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A top chamfer or bottom chamfer is considered active only when both the angle and depth for the respective chamfers are greater than zero.</p>
+</div>
+<div class="paragraph">
+<p>Multiple cuts might be required for a bevel. The order of cuts is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Bottom chamfer cut.</p>
+</li>
+<li>
+<p>Vertical cut.</p>
+</li>
+<li>
+<p>Top chamfer cut.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multiplecut.png" alt="multiplecut" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>TecZone Laser supports four different types of bevel cuts:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/types.png" alt="types" width="500">
+</div>
+<div class="title">Figure 2. Bevel Types</div>
+</div>
+<div class="paragraph">
+<p>For a <strong>V</strong> or <strong>DV</strong> bevel type it is not necessary to make a vertical cut at the tip of the bevel (See cut number 2). In case, a vertical cut is required the user needs to select the option <strong>Force vertical cut</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The path of the tool center point on the top surface for making these cuts is shown below. These paths are calculated taking the chamfer angle, depth, and beam width into consideration. Below, you can see all the three cuts of a square hole, along with their chamfer settings.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/path.png" alt="path">
+</div>
+<div class="title">Figure 3. Tool path</div>
+</div>
+<div class="paragraph">
+<p>The vertical cut is shown in standard laser cutting colour. The chamfer cuts which are made with tilted heads are shown with a yellow highlight around them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_corner_treatment_on_bevel_cut">Corner Treatment on Bevel Cut</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The corner treatment describes the geometry if two chamfer on different faces are connected. The default corner treatment for bevel cutting is <strong>Conical Rounding</strong>. The user can modify the corner treatment of a bevel cut similar to normal cuts.</p>
+</div>
+<div class="paragraph">
+<p>Select a point close to the corner and choose the required corner treatment .</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornertreat.png" alt="cornertreat" width="500">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornertypes.png" alt="cornertypes">
+</div>
+<div class="title">Figure 4. Corner treatment types</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bevel_cut_for_split_contours">Bevel Cut for Split Contours</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is possible to define the required chamfer angle at various sections of the contour. When a sheet metal part is tooled with bevel cut, click on the bevel contour again. The <strong>Change chamfer&#8230;&#8203;</strong> option is visible under <strong>Advanced</strong> section of the Laser Cut panel.</p>
+</div>
+<div class="paragraph">
+<p>This option will appear only if the following conditions are met:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Selected contour should be a closed one.</p>
+</li>
+<li>
+<p>The selected laser cut should have a default chamfer angle defined in <strong>Chamfer</strong> section of Laser Cut panel.</p>
+</li>
+<li>
+<p>The selected laser cut should have only one chamfer angle (i.e) either top chamfer or bottom chamfer.</p>
+</li>
+<li>
+<p>Based on the thickness, the depth changes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When this <strong>Change Chamfer&#8230;&#8203;</strong> is selected, the following properties appears under Advanced section:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/splitcontour.png" alt="splitcontour" width="300"></span>
+<span class="image"><img src="img/editchamfer.png" alt="editchamfer"></span></p>
+</div>
+<div class="paragraph">
+<p>The following example explains chamfer settings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a rectangle with outer contour 100x100 mm and inner contour 50x50 mm.</p>
+</li>
+<li>
+<p>Edit sheet size to 10 mm and select a bevel cut laser machine.</p>
+</li>
+<li>
+<p>Go to Cut setting &#8594; Cut CAM &#8594; Laser CAM and change the process for open polylines to <strong>Cut</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cutsettings.png" alt="cutsettings">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Process the Laser tooling and select the inner contour to access the <strong>Laser Cut</strong> panel.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/chamfersettings.png" alt="chamfersettings">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Chamfer:</strong> Apply the Top chamfer angle to 30° and Top chamfer depth to 5 mm.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The chamfer angle applies to the entire contour, in  counter-clockwise direction.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/topchamfer.png" alt="topchamfer">
+</div>
+</div>
+<div class="paragraph">
+<p>To change the chamfer angle for a particular section of the contour, click the inner contour again and select <strong>change chamfer&#8230;&#8203;</strong> option.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/changechamfer.png" alt="changechamfer">
+</div>
+</div>
+<div class="paragraph">
+<p>Apply the new chamfer angle and select a point in the contour. By default, the new chamfer is applied from the selected point to the rest of the contour. Clicking again on the point will remove the new chamfer anf</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multichamfer.png" alt="multichamfer">
+</div>
+</div>
+<div class="paragraph">
+<p>The new angle will be applied to the rest of the contour.</p>
+</div>
+<div class="paragraph">
+<p><strong>Continuous transition:</strong> If this option is selected, the laser head angle will be interpolated along the segment and the head angle does not change abruptly at the change point.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Continuous transition is not applicable for arc or circle segments and at the corners.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/notransition.png" alt="notransition">
+</div>
+<div class="title">Figure 5. Without continuous transition</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/transition.png" alt="transition">
+</div>
+<div class="title">Figure 6. With continuous transition</div>
+</div>
+<div class="paragraph">
+<p><strong>Corner offset:</strong> This option is used to change the corner offset distance at which the chamfer angle changes. When set to 0, the chamfer angle change will start from the corner.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/corneroffset.png" alt="corneroffset" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>The start point of the contour is shown with a yellow dot as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/corneroffsetmark.png" alt="corneroffsetmark" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Further, the direction in which the changed chamfer angle is applied is the direction of the contour in drawing and not the direction of cutting.
+The user can remove an existing angle change point by clicking on the change point. The cursor changes to a cross mark to remove the existing points.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/corner.png" alt="corner" width="300">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bevel_cut_for_open_contours">Bevel Cut for Open Contours</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A chamfer which is not similar to the outer contour line could be produced by an extra line which would be annotated with a bevel cut.</p>
+</div>
+<div class="paragraph">
+<p>An example part is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bevel.png" alt="bevel" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>For this design, an auxiliary line is needed which defines the bevel cut.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/auxiliaryline.png" alt="auxiliaryline" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the auxiliary line to edit the chamfer angle.</p>
+</div>
+<div class="paragraph">
+<p>The user can enter positive or negative value to indicate the direction of the bevel cut. The dotted line indicates the resulting cut line on the lower side of the sheet.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/changebevel.png" alt="changebevel" width="600"></span></p>
+</div>
+<div class="paragraph">
+<p>In some cases, it is required to flip the kerf offset of the laser beam. Select <strong>Flip beam offset</strong> checkbox to flip the kerf offset of the laser beam to other side of the laser cut.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/flip-beam.png" alt="flip beam" width="500">
+</div>
+<div class="title">Figure 7. Without Flip beam offset</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/flip-beam1.png" alt="flip beam1" width="500">
+</div>
+<div class="title">Figure 8. With Flip beam offset</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_microjoints_in_bevel_cut">Microjoints in Bevel Cut</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is possible to add microjoints by selecting the respective contour.</p>
+</div>
+<div class="paragraph">
+<p>Click the contour on a part and navigate to <strong>Contour</strong> panel.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/microjointcontour.png" alt="microjointcontour"></span> <span class="image"><img src="img/microcontour.png" alt="microcontour" width="440"></span></p>
+</div>
+<div class="paragraph">
+<p>If the bevel tooling of the contour contains straight cut, then the user can click on the contour to insert a  microjoint to the straight cut of the bevel. If a microjoint joint already exists, it will be removed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>Add, Reduce, Remove All</strong>  options will be disabled if the contour has bevel cuts. Microjoints cannot not be added for V-bevel cuts.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_ranges_for_bevel_machines">Working ranges for Bevel Machines</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/workingarea.png" alt="WorkingArea">
+</div>
+</div>
+<div class="paragraph">
+<p>If the <strong>Show machine working area</strong> option is <strong>turned on</strong>, the working ranges on a layout when it is processed on a bevel machine will be displayed as below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ranges.png" alt="Ranges">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Red line</strong> indicates the range to process all straight cut parts.</p>
+</li>
+<li>
+<p><strong>Yellow line</strong> indicates the range to process beveled parts.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_generating_bevel_cut">Generating Bevel Cut</a>
+    </li>
+    <li level="1">
+      <a href="#_corner_treatment_on_bevel_cut">Corner Treatment on Bevel Cut</a>
+    </li>
+    <li level="1">
+      <a href="#_bevel_cut_for_split_contours">Bevel Cut for Split Contours</a>
+    </li>
+    <li level="1">
+      <a href="#_bevel_cut_for_open_contours">Bevel Cut for Open Contours</a>
+    </li>
+    <li level="1">
+      <a href="#_microjoints_in_bevel_cut">Microjoints in Bevel Cut</a>
+    </li>
+    <li level="1">
+      <a href="#_working_ranges_for_bevel_machines">Working ranges for Bevel Machines</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="textonparts.html">Text on Parts</a></span>
+  <span class="next"><a href="detectline.html">DetectLine</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co. KG. All rights reserved. </p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

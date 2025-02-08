@@ -1,0 +1,19 @@
+<div class="paragraph">
+<p>Change material (from thick to thin) changes contour size but will not retool holes that were pierced.</p>
+</div>
+<div class="paragraph">
+<p>When auto tooling a part, the software never approximates a tiny contour with a point operation (pierce), no matter how small it is for that LTT. However, if it is smaller than the smallest size prescribed in LTT, a warning is show in the sequence table. Selecting such a cut, an option to convert the path operation to point operation is provided for the user.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/442.png" alt="442" width="30%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/443.png" alt="443" width="30%">
+</div>
+</div>
+<div class="paragraph">
+<p>After such conversions, if the user later changed the LTT or material thickness, the software automatically evaluates and converts any such point operation to path operation in a safe manner. A message is shown at the bottom left of the screen, indicating how many such conversions were made.</p>
+</div>

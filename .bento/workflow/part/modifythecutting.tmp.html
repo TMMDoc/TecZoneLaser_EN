@@ -1,0 +1,196 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_corner_treatment">Corner Treatment</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>After creating part in sketch mode, use the workflow to select
+laser tech or use shortcut key <kbd>L</kbd>. The part will be tooled. Select the
+part to preview of the approach path is shown while moving it. If the
+approach is being moved to a tight corner, user can see that the
+approach is being shortened. Further, if the traverse-lines view is on,
+one can also see that the routing will be dynamically updated as the
+user is moving the approach.</p>
+</div>
+<div class="paragraph">
+<p><em>Example</em>:
+If the user is moving approach
+point to the opposite side of the hole, a head-down reposition to the
+next cut could change to a head-up reposition.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cutmod.png" alt="cutmod">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Pierce</strong><br>
+Allows you to choose the pierce type.
+Possible pierce types vary from machine to machine. Depending on the
+selection of pierce type, the marker drawn to indicate pierce point in
+the editor will change.</p>
+</div>
+<div class="paragraph">
+<p><strong>Length &amp; Radius</strong><br>
+The following illustrations
+will clarify its meaning in different circumstances. Note that with
+fixed length, increasing the radius would shorten the straight segment
+of approach geometry.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cutpierce.png" alt="cutpierce">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Angle</strong><br>
+Whether for
+approach or for escape, a greater angle would imply that the laser head
+must make a sharper turn.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/modangle.png" alt="modangle">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Contour</strong></p>
+</div>
+<div class="paragraph">
+<p>Selecting all tooling on the current
+polyline and provides a special panel using which actions on the contour
+(inner or outer) can be performed as a whole.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/lasercontour.png" alt="lasercontour">
+</div>
+</div>
+<div class="paragraph">
+<p>For example, microjoints
+on the contour or chute conditions could be assigned from the 'Contour'
+panel.</p>
+</div>
+<div class="paragraph">
+<p>Selection buttons at the bottom allows you to select similar or
+all laser cuts. Cuts are considered similar if they start and end at
+congruent points on identical polylines.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_corner_treatment">Corner Treatment</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornertreat.png" alt="cornertreat">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Corner treatment option is available only after tooling a Laser Part.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Click on in the CutCAM mode on a corner and select <strong>Corner Treatment</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Once a part is imported and clean up of the part is complete, the part is ready to be tooled.
+Once tooled, modification of the corner treatment of the part can be done by the user.
+Selecting a corner of the part will display the Corner Treatment dialogue.</p>
+</div>
+<div class="paragraph">
+<p><strong>Auto Compute</strong> - This option automatically computes the best suited treatment for the
+selected corner.</p>
+</div>
+<div class="paragraph">
+<p><strong>Treatment</strong> - This displays a drop-down menu to which corner treatment is desired.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Treatment</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-center valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Do Nothing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No corner processing performed.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/donothing.png" alt="donothing" width="64"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Rounding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rounds off at the corners.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/round.png" alt="round" width="64"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Looping</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loops at the corners.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/loop.png" alt="loop" width="64"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Dwell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dwells at the corners.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/dwell.png" alt="dwell" width="64"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Cool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cools down the laser at the corners.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/cool.png" alt="cool" width="64"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Stop</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stops at the corner.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/stopcorner.png" alt="stopcorner" width="64"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Slowdown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slows down the laser at the corners.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/slowdown.png" alt="slowdown" width="64"></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Radius</strong> - This will sets a radius for the selected corner.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Click and hold <kbd>Ctrl</kbd> key and scroll the mouse wheel for <em>coarse</em> increment.<br>
+Click and hold <kbd>Shift</kbd> key and scroll the mouse wheel for <em>fine</em> increment.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Similar on this contour</strong> - This option will select all similar corners on the selected contour.</p>
+</div>
+<div class="paragraph">
+<p><strong>All on this contour</strong> - This option will select all corners on the selected contour.</p>
+</div>
+<div class="paragraph">
+<p><strong>Similar on all contours</strong> - This option will select all similar corners on all contours.</p>
+</div>
+</div>
+</div>

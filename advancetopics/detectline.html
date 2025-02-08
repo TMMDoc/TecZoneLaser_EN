@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>DetectLine</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img1/logo1.png" width="103" height="34 " /></div>
+        <div><p>TecZone Laser Reference Manual </p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../index.html">Welcome to TecZone Laser</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../intro/index.html">Introduction</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../intro/install.html">Installing TecZone Laser</a></li>
+        <li><button class="tree blank"></button><a href="../intro/ui.html">TecZone Laser User Interface</a></li>
+        <li><button class="tree blank"></button><a href="../intro/workflow.html">Workflow Panel</a></li>
+        <li><button class="tree blank"></button><a href="../intro/database.html">Machine Database</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../workflow/index.html">Basic Workflows</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../workflow/part/index.html">Part Workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../workflow/part/loadpart.html">Load Part</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/sketch.html">Sketch Mode</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/measure.html">Measure</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/modifythecutting.html">Modifying Laser Part</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/sequence.html">Sequence Navigator </a></li>
+            <li><button class="tree blank"></button><a href="../workflow/part/nc.html">NC Code Generation</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../workflow/job/index.html">Job workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../workflow/job/createjob.html">Create Job</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/job/setthelasertechnology.html">Set Laser Technology Table (LTT)</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/job/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/job/automaticpartplacement.html">Automatic Part Placement</a></li>
+            <li><button class="tree blank"></button><a href="../workflow/job/manualpartplacement.html">Manual Part Placement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="index.html">Advanced Topics</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="geoimport.html">Geometry Import Options</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="advtooling/index.html">Advanced Tooling Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="advtooling/microjoint.html">Editing Microjoints</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/twinlinetooling.html">TwinLine</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/flyline.html">FlyLine</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/dimpleapproach.html">Dimple Approach</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/remaindersheets.html">Remainder Sheets</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/pieslug.html">Pie-Slug  Circular Holes </a></li>
+            <li><button class="tree blank"></button><a href="advtooling/avoidretooling.html">Avoid Retooling Pierces</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/finishingrules.html">Finishing Rules</a></li>
+            <li><button class="tree blank"></button><a href="advtooling/cloneltt.html">Clone LTT</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="advnesting/index.html">Advanced Nesting Features</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="advnesting/mirror.html">Mirrored Parts</a></li>
+            <li><button class="tree blank"></button><a href="advnesting/findpart.html">Find a Part in Nest Layout</a></li>
+            <li><button class="tree blank"></button><a href="advnesting/fillerpartsjob.html">Filler parts in Nest Layout</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="advoptimization/index.html">Advanced Tooling Optimization</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="advoptimization/optimizingcontourquality.html"> Contour Quality</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/scrapcutting.html">Optimizing Stability with Scrap Cutting</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/influencingtiltingbehaviour.html">Optimizing Tilting Behaviour</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/spaceout.html">Space Out Slice Cuts to Avoid Collision</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/minimizelayouts.html">Minimize Number of Different Layouts</a></li>
+            <li><button class="tree blank"></button><a href="advoptimization/dynamiclevel.html">Dynamic Level Setting </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="menu/index.html">Advanced Menu Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="menu/contextsensitivemenues.html"> Context Sensitive Menus</a></li>
+            <li><button class="tree blank"></button><a href="menu/hirarchicalsettingconcept.html">Hierarchy of Settings</a></li>
+            <li><button class="tree blank"></button><a href="menu/multiselections.html">Multi-Selections</a></li>
+            <li><button class="tree blank"></button><a href="menu/csv.html">CSV Output</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="manualsheetslice.html">Manual Sheet Slicing Cuts</a></li>
+        <li><button class="tree blank"></button><a href="textonparts.html">Text on Parts</a></li>
+        <li><button class="tree blank"></button><a href="bevelcut.html">Bevel Cut</a></li>
+        <li><button class="tree blank"></button><a class="active" href="detectline.html">DetectLine</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../applicationsettings/index.html">Application Settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../applicationsettings/cutcam/index.html">Cut CAM</a>
+          <ul class="hide">
+            <li>
+              <button class="tree closed"></button>
+              <a href="../applicationsettings/cutcam/layout/index.html">Layout</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/nesting.html">Nest Settings</a></li>
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/sheet.html">Sheet</a></li>
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/layout/worksupport.html">Work Support</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="tree closed"></button>
+              <a href="../applicationsettings/cutcam/lasercam/index.html">Laser CAM</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../applicationsettings/cutcam/lasercam/sequence.html">Sequence</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../applicationsettings/cutoutputs.html">Cut Outputs</a></li>
+        <li><button class="tree blank"></button><a href="../applicationsettings/cutview.html">Cut View</a></li>
+      </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="index.html">Advanced Topics</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="detectline.html">DetectLine</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>DetectLine</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>DetectLine accurately detects work piece position using measurements acquired from the inner contours or outer sheet edges (measure points).</p>
+</div>
+<div class="paragraph">
+<p>TecZone Laser uses measuring program that contains the technology table <strong>TC_Sheet_Measure</strong> to detect measure points.</p>
+</div>
+<div class="paragraph">
+<p>An accuracy of up to ±0.1 mm is achieved. At least two measure points are required for DetectLine to work.</p>
+</div>
+<div class="paragraph">
+<p>To enable DetectLine feature, go to <strong>machine database</strong> and select the <strong>DetectLine</strong> checkbox under <strong>Settings</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/machinedb.png" alt="MachineDB">
+</div>
+</div>
+<div class="paragraph">
+<p>To change the default sheet handling characteristics, navigate to <strong>Settings &#8594; Machine Defaults &#8594; Sheet handling</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/machinedefault.png" alt="MachineDefault">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_procedure">Procedure</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Load sheet.</p>
+</li>
+<li>
+<p>Make sure DetectLine option is enabled in machine database.</p>
+</li>
+<li>
+<p>Go through 'workflow' in TecZone Laser to complete 'post process' to generate NC code.</p>
+</li>
+<li>
+<p>Transfer the NC code to machine.</p>
+</li>
+<li>
+<p>Run the program on machine.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When DetectLine option is selected, the NC code generated includes the <strong>Sheet_Measure</strong> program to capture the coordinates of the loaded sheet.</p>
+</div>
+<div class="paragraph">
+<p>When the program is run, <strong>Sheet_Measure</strong> program populates the sheets coordinates into <strong>TC_Sheet_measure</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Please find below the difference in <strong>.lst</strong> file with and without DetectLine:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sheetmeasure.png" alt="SheetMeasure">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tcsheetmeasure.png" alt="TcSheetMeasure">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_detectline_for_cut_to_size_parts">DetectLine for Cut to Size Parts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For a part where blank is already cut to size, the following pre-cut geometries are eligible for measure points:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Corners of the sheet</p>
+</li>
+<li>
+<p>Center of pre-cut circular holes</p>
+</li>
+<li>
+<p>Right angle corner of any pre-cut polygonal holes</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_default_selection_of_measure_points">Default Selection of Measure Points</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only circular holes with <strong>diameter less than 100 mm</strong> are selected as default measure points.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only two measure points are allowed per layout. If a third measure point is selected, the first one will be removed.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Two outside corners of a layout <strong>can not</strong> selected as measure points.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the <strong>example layout</strong> below, we have three pre-cut geometries. A circle with diameter 50 mm, another circle with diameter 216 mm and a square hole with 100 x 100 mm.</p>
+</div>
+<div class="paragraph">
+<p>Regardless of these, the bottom left corner of the layout and pre-cut circular hole with diameter 50 mm
+is selected as default measure points.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/measurepoints.png" alt="MeasurePoints">
+</div>
+<div class="title">Figure 1. Example layout</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_change_measure_points">Change Measure Points</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To change the measure points, click on the edge of the layout to bring the <strong>layout panel</strong> and select <strong>change measure points&#8230;&#8203;</strong> option.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/measurepoints1.png" alt="MeasurePoints1">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hover over the <strong>change measure points&#8230;&#8203;</strong> option to see the geometry and placement of the existing measure points.</p>
+</li>
+<li>
+<p>To <strong>change</strong> measure points, click on any of the eligible measure points.</p>
+</li>
+<li>
+<p>To <strong>remove</strong> measure points, click on the existing measure point.</p>
+</li>
+<li>
+<p>To <strong>copy</strong> measure points to a different layout on the same sheet, click <strong>copy measure points</strong> option.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/measurepoints2.png" alt="MeasurePoints2">
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Some other possible measure points:</div>
+<p><span class="image"><img src="img/measurepoints3.png" alt="MeasurePoints3" width="400"></span>
+<span class="image"><img src="img/measurepoints4.png" alt="MeasurePoints4" width="410"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/measurepoints5.png" alt="MeasurePoints5" width="400"></span>
+<span class="image"><img src="img/measurepoints6.png" alt="MeasurePoints6" width="389"></span></p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_procedure">Procedure</a>
+    </li>
+    <li level="1">
+      <a href="#_detectline_for_cut_to_size_parts">DetectLine for Cut to Size Parts</a>
+    </li>
+    <li level="1">
+      <a href="#_default_selection_of_measure_points">Default Selection of Measure Points</a>
+    </li>
+    <li level="1">
+      <a href="#_change_measure_points">Change Measure Points</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="bevelcut.html">Bevel Cut</a></span>
+  <span class="next"><a href="../applicationsettings/index.html">Application Settings</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co. KG. All rights reserved. </p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

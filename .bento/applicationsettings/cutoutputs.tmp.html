@@ -1,0 +1,71 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_report_settings">Report Settings</a></li>
+<li><a href="#_code_settings">Code Settings</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/kb242.png" alt="kb242">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_report_settings">Report Settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Layout report template</strong> - The default location points to the template that is shipped along with Cut.</p>
+</div>
+<div class="paragraph">
+<p><strong>Job report template</strong> - Use this to define the location of the job report template.</p>
+</div>
+<div class="paragraph">
+<p><strong>Report destination</strong> - The target location where the setup sheet is saved.</p>
+</div>
+<div class="paragraph">
+<p><strong>Available Variables</strong></p>
+</div>
+<div class="paragraph">
+<p>$COMMONDOCUMENTS - Windows standard documents directory</p>
+</div>
+<div class="paragraph">
+<p>$MCID - Machine ID</p>
+</div>
+<div class="paragraph">
+<p>$Output - Standard output directory</p>
+</div>
+<div class="paragraph">
+<p>$PARTDIR - Part files directory</p>
+</div>
+<div class="paragraph">
+<p>$PARTBASEDIR - Common base directory for part files on the layout</p>
+</div>
+<div class="paragraph">
+<p>$PROGRAMDATA - Windows program data directory</p>
+</div>
+<div class="paragraph">
+<p><strong>Report output format</strong> - Preferred print format, HTML or PDF.</p>
+</div>
+<div class="paragraph">
+<p><strong>Released parts CSV destination</strong> - Use this to specify the location of the CSV to be saved for released parts.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_code_settings">Code Settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>NC program destination</strong> - Set this as the location for all NC Code files to be saved.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code processor</strong> - File path to the post-processor tool (.exe) to run after generating code.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use TC_WRITE macro to mark text</strong> - This option controls whether the etched text uses TC_WRITE or standard G commands. For a machine with a controller which does not support TC_WRITE, the user can uncheck this option at the Machine Defaults level so that the code is always generated without TC_WRITE for that machine.</p>
+</div>
+</div>
+</div>

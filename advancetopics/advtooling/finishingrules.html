@@ -1,0 +1,562 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Finishing Rules</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img1/logo1.png" width="103" height="34 " /></div>
+        <div><p>TecZone Laser Reference Manual </p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../../index.html">Welcome to TecZone Laser</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../intro/index.html">Introduction</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../intro/install.html">Installing TecZone Laser</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/ui.html">TecZone Laser User Interface</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/workflow.html">Workflow Panel</a></li>
+        <li><button class="tree blank"></button><a href="../../intro/database.html">Machine Database</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../workflow/index.html">Basic Workflows</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../workflow/part/index.html">Part Workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../workflow/part/loadpart.html">Load Part</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/sketch.html">Sketch Mode</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/measure.html">Measure</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/modifythecutting.html">Modifying Laser Part</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/sequence.html">Sequence Navigator </a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/part/nc.html">NC Code Generation</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../workflow/job/index.html">Job workflow</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../../workflow/job/createjob.html">Create Job</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/setthelasertechnology.html">Set Laser Technology Table (LTT)</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/nesting.html">Nesting</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/automaticpartplacement.html">Automatic Part Placement</a></li>
+            <li><button class="tree blank"></button><a href="../../workflow/job/manualpartplacement.html">Manual Part Placement</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="../index.html">Advanced Topics</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="../geoimport.html">Geometry Import Options</a></li>
+        <li>
+          <button class="tree open"></button>
+          <a href="index.html">Advanced Tooling Options</a>
+          <ul>
+            <li><button class="tree blank"></button><a href="microjoint.html">Editing Microjoints</a></li>
+            <li><button class="tree blank"></button><a href="twinlinetooling.html">TwinLine</a></li>
+            <li><button class="tree blank"></button><a href="flyline.html">FlyLine</a></li>
+            <li><button class="tree blank"></button><a href="dimpleapproach.html">Dimple Approach</a></li>
+            <li><button class="tree blank"></button><a href="remaindersheets.html">Remainder Sheets</a></li>
+            <li><button class="tree blank"></button><a href="pieslug.html">Pie-Slug  Circular Holes </a></li>
+            <li><button class="tree blank"></button><a href="avoidretooling.html">Avoid Retooling Pierces</a></li>
+            <li><button class="tree blank"></button><a class="active" href="finishingrules.html">Finishing Rules</a></li>
+            <li><button class="tree blank"></button><a href="cloneltt.html">Clone LTT</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../advnesting/index.html">Advanced Nesting Features</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../advnesting/mirror.html">Mirrored Parts</a></li>
+            <li><button class="tree blank"></button><a href="../advnesting/findpart.html">Find a Part in Nest Layout</a></li>
+            <li><button class="tree blank"></button><a href="../advnesting/fillerpartsjob.html">Filler parts in Nest Layout</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../advoptimization/index.html">Advanced Tooling Optimization</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../advoptimization/optimizingcontourquality.html"> Contour Quality</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/scrapcutting.html">Optimizing Stability with Scrap Cutting</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/influencingtiltingbehaviour.html">Optimizing Tilting Behaviour</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/spaceout.html">Space Out Slice Cuts to Avoid Collision</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/minimizelayouts.html">Minimize Number of Different Layouts</a></li>
+            <li><button class="tree blank"></button><a href="../advoptimization/dynamiclevel.html">Dynamic Level Setting </a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../menu/index.html">Advanced Menu Options</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../menu/contextsensitivemenues.html"> Context Sensitive Menus</a></li>
+            <li><button class="tree blank"></button><a href="../menu/hirarchicalsettingconcept.html">Hierarchy of Settings</a></li>
+            <li><button class="tree blank"></button><a href="../menu/multiselections.html">Multi-Selections</a></li>
+            <li><button class="tree blank"></button><a href="../menu/csv.html">CSV Output</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../manualsheetslice.html">Manual Sheet Slicing Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../textonparts.html">Text on Parts</a></li>
+        <li><button class="tree blank"></button><a href="../bevelcut.html">Bevel Cut</a></li>
+        <li><button class="tree blank"></button><a href="../detectline.html">DetectLine</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../../applicationsettings/index.html">Application Settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../../applicationsettings/cutcam/index.html">Cut CAM</a>
+          <ul class="hide">
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/layout/index.html">Layout</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/nesting.html">Nest Settings</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheet.html">Sheet</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/layout/worksupport.html">Work Support</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="tree closed"></button>
+              <a href="../../applicationsettings/cutcam/lasercam/index.html">Laser CAM</a>
+              <ul class="hide">
+                <li><button class="tree blank"></button><a href="../../applicationsettings/cutcam/lasercam/sequence.html">Sequence</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutoutputs.html">Cut Outputs</a></li>
+        <li><button class="tree blank"></button><a href="../../applicationsettings/cutview.html">Cut View</a></li>
+      </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="../index.html">Advanced Topics</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="index.html">Advanced Tooling Options</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="finishingrules.html">Finishing Rules</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Finishing Rules</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Finishing rules define all processes done automatically
+after nesting.
+They have many utilities, including preventing collisions, restoring
+balance to tilting parts, and making optimal use of the entire surface of
+a worksheet. The user can add, remove or modify
+rules. The
+order of rules in this list is important; while auto tooling. When TecZone Laser
+Cut finishes generating tooling for a contour, it checks this contour
+against each rule in this list, starting at the first rule. If the shape
+matches any rule, the corresponding action is applied; the software does
+not process any further rules for this contour. The checkbox at the
+beginning of each row can be used to temporarily disable any rule
+without having to delete it.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These finishing rules are applied at
+the time of auto tooling a part.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Hence, any change made here will take
+effect only when you recompute tooling. These settings have no effect
+whatever at the layout level.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne7.bmp" alt="image" width="470" height="88">
+</div>
+</div>
+<div class="paragraph">
+<p>To add a rule, you have to choose three parameters:</p>
+</div>
+<div class="paragraph">
+<p><strong>Contour:</strong> The type of contour Inner vs Outer.
+Stable-on-slats vs Unstable-on-slats Colliding or not. The available
+options for selecting a contour are discussed in more detail in a table
+following this list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Size:</strong> The maximum limiting size of contours
+for which this rule applies. You can either type in the size in the form
+of <strong>width x height</strong> or type in just one number if both width and height
+have the same value.</p>
+</div>
+<div class="paragraph">
+<p><strong>Action:</strong> The action to perform micro-joint,
+scrap cut etc. The complete list of available actions is discussed later
+in this document.</p>
+</div>
+<div class="paragraph">
+<p>Finishing rules define all processes done automatically after nesting and have many benefits,including <strong>collision prevention</strong>, <strong>restoration</strong> to balance potential <strong>tilting</strong> of parts, and making <strong>optimal use</strong> of an entire worksheet surface.</p>
+</div>
+<div class="paragraph">
+<p>When auto-tooling, the order of rules in this list is important. When TecZone Laser generates tooling for a contour, it checks this contour against each rule in the list, starting from the first rule. If the shape matches any rule, the corresponding action is applied; the software does not process any further rules for this contour. The checkbox at the beginning of each row can be used to temporarily disable any rule without having to delete it.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These finishing rules are applied at the time of auto tooling a part. Hence, any change made here will take effect only when you recompute the tooling. These settings have no effect whatsoever at the layout level.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="img/co197.png" alt="co197"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Contours</strong> are selected based on the below filters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>All</strong> - Contours are not filtered based on contour type if 'All' is the selected option for contour type.</p>
+</li>
+<li>
+<p><strong>Inner</strong> - All inner contours of a part are eligible for applying this rule.</p>
+</li>
+<li>
+<p><strong>Outer</strong> - All outer contours of a part are eligible for applying this rule.</p>
+</li>
+<li>
+<p><strong>Stable</strong> - All contours (inner as well as outer) that will remain stable on slats are
+eligible.</p>
+</li>
+<li>
+<p><strong>Stable Inner</strong> - All inner contours will remain stable on slats.</p>
+</li>
+<li>
+<p><strong>Stable Outer</strong> - All outer contours will remain stable on slats.</p>
+</li>
+<li>
+<p><strong>Unstable</strong> - All contours (inner as well as outer) that will either tip or fall through the slats are eligible.</p>
+</li>
+<li>
+<p><strong>Unstable Inner</strong> - All inner contours that are unstable on slats.</p>
+</li>
+<li>
+<p><strong>Unstable Outer</strong> - All outer contours that are unstable on slats.</p>
+</li>
+<li>
+<p><strong>Colliding</strong> - All unstable contours that are too close to the other contours of the part. If this contour were cut first, an adjacent contour could not be cut without the risk of head collision with tipping contour.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Contours that are stable on slats are never considered to be colliding.</p>
+</li>
+<li>
+<p>If an inner contour is too close to another inner contour, both unstable, then both
+will be marked as colliding.</p>
+</li>
+<li>
+<p>If an inner contour is too close to an outer contour, only the inner contour will be
+marked as colliding. It is unnecessary to mark the outer contour as colliding as it will almost always be cut after the inner contour.</p>
+</li>
+<li>
+<p>The new parameter <strong><em>Allowance</em></strong> when routing around tipping holes is used to decide if
+two contours are too close.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Colliding Inner</strong> - All inner contours that are colliding.</p>
+</li>
+<li>
+<p><strong>Colliding Outer</strong> - All outer contours that are colliding.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Size</strong> - The maximum limiting size of contours for which this rule applies. You can either type in the size in the form of "<em>width</em> x <em>height</em>" or type in just one number if both width and height have the same value.</p>
+</li>
+<li>
+<p><strong>Action</strong>
+<span class="image right"><img src="img/ac194.png" alt="ac194"></span></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No special action is taken.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Auto microjoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applies micro-joint(s) on the
+contourSoftware will automatically decide how many micro-joints are
+required based on the parameter Maximum allowed dip into slats.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Cut up scrap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cut larger cut outs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">One microjoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly one microjoint on
+the contour.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Two microjoints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly two
+microjoints on the contour.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Three microjoints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create exactly three
+microjoints on the contour.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modifying_the_finishing_rules_for_single_part">Modifying the Finishing Rules (For Single Part)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Recompute &#8594; Tooling: Drop existing tooling.</p>
+</div>
+<div class="paragraph">
+<p>On the bottom of the screen will appear a notification that confirms the done operation(s).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fr13.png" alt="fr13">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fr14.png" alt="fr14">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modifying_the_finishing_rules_for_multi_parts">Modifying the Finishing Rules (For Multi Parts)</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/fr15.png" alt="fr15">
+</div>
+<div class="title">Figure 1. Step one</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fr16.png" alt="fr16">
+</div>
+<div class="title">Figure 2. Step two</div>
+</div>
+<div class="sect2">
+<h3 id="_finishing_rules_to_prevent_tilting_parts">Finishing rules to prevent tilting parts</h3>
+<div class="imageblock">
+<div class="content">
+<img src="img/fr17.png" alt="fr17">
+</div>
+</div>
+<div class="paragraph">
+<p>TecZone Laser recognizes by doing precise calculations that some
+parts could tilt on the layout sheet. This is why setting up the sheet
+details like loading tolerance are extremely important. TecZone Laser
+Cut will mark with red color the contours
+considered unstable, so you&#8217;ll be able to adjust the finishing rules in
+order to avoid possible accidents while laser cutting.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on the CAM Settings (finishing rules) so that you can access the
+controls.</p>
+</li>
+<li>
+<p>Press the <span class="image"><img src="img/circle-plus.png" alt="circle plus" width="18"></span> sign
+and to add the first rule i.e., for the unstable inner contour, we would
+like to have the ''cut up scrap'' as action applied. Whereas the
+''Size'' parameter also needs to be filled.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Measurements must be given either in millimetres or inches.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_select_specific_parts_50mm_100mm">Select Specific Parts (&gt; 50mm &lt; 100mm)</h3>
+<div class="paragraph">
+<p>Let&#8217;s say we want to select all parts that are larger than 50 mm
+and smaller than 100 mm. Because there are several ways to understand the
+given problem, we propose three different options in terms of the type of
+contour chosen that solves the problem.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The size parameter is always less than or equal to the
+user&#8217;s given value.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Whole Part Selection together with similar parts (Outer
+Contour).</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/fr18.png" alt="fr18">
+</div>
+</div>
+<div class="paragraph">
+<p>With that in mind, we have to set this through three finishing
+rules that keeps in focus the outer contour.
+First of all, we have to define a piece size limit of 9999 millimeters (a
+limit rarely reached in our examples). The second rule has to cover the
+parts with a maximum length of 100 mm. We do so by setting the parameter
+"Size" as 100x100. Therefore, remains to select the parts smaller than 50
+millimetres and that means exactly "50 x 50" for the size parameter.
+Always remember that "n" millimeters must be given in a
+"width x height" format. The image below
+shows how the finishing rules table should look like.</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_modifying_the_finishing_rules_for_single_part">Modifying the Finishing Rules (For Single Part)</a>
+    </li>
+    <li level="1">
+      <a href="#_modifying_the_finishing_rules_for_multi_parts">Modifying the Finishing Rules (For Multi Parts)</a>
+    </li>
+    <li level="2">
+      <a href="#_finishing_rules_to_prevent_tilting_parts">Finishing rules to prevent tilting parts</a>
+    </li>
+    <li level="2">
+      <a href="#_select_specific_parts_50mm_100mm">Select Specific Parts (&gt; 50mm &lt; 100mm)</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="avoidretooling.html">Avoid Retooling Pierces</a></span>
+  <span class="next"><a href="cloneltt.html">Clone LTT</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co. KG. All rights reserved. </p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

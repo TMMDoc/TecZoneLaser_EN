@@ -1,0 +1,199 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_procedure">Procedure</a></li>
+<li><a href="#_detectline_for_cut_to_size_parts">DetectLine for Cut to Size Parts</a></li>
+<li><a href="#_default_selection_of_measure_points">Default Selection of Measure Points</a></li>
+<li><a href="#_change_measure_points">Change Measure Points</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>DetectLine accurately detects work piece position using measurements acquired from the inner contours or outer sheet edges (measure points).</p>
+</div>
+<div class="paragraph">
+<p>TecZone Laser uses measuring program that contains the technology table <strong>TC_Sheet_Measure</strong> to detect measure points.</p>
+</div>
+<div class="paragraph">
+<p>An accuracy of up to ±0.1 mm is achieved. At least two measure points are required for DetectLine to work.</p>
+</div>
+<div class="paragraph">
+<p>To enable DetectLine feature, go to <strong>machine database</strong> and select the <strong>DetectLine</strong> checkbox under <strong>Settings</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/MachineDB.png" alt="MachineDB">
+</div>
+</div>
+<div class="paragraph">
+<p>To change the default sheet handling characteristics, navigate to <strong>Settings &#8594; Machine Defaults &#8594; Sheet handling</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/MachineDefault.png" alt="MachineDefault">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_procedure">Procedure</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Load sheet.</p>
+</li>
+<li>
+<p>Make sure DetectLine option is enabled in machine database.</p>
+</li>
+<li>
+<p>Go through 'workflow' in TecZone Laser to complete 'post process' to generate NC code.</p>
+</li>
+<li>
+<p>Transfer the NC code to machine.</p>
+</li>
+<li>
+<p>Run the program on machine.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When DetectLine option is selected, the NC code generated includes the <strong>Sheet_Measure</strong> program to capture the coordinates of the loaded sheet.</p>
+</div>
+<div class="paragraph">
+<p>When the program is run, <strong>Sheet_Measure</strong> program populates the sheets coordinates into <strong>TC_Sheet_measure</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Please find below the difference in <strong>.lst</strong> file with and without DetectLine:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/SheetMeasure.png" alt="SheetMeasure">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/TcSheetMeasure.png" alt="TcSheetMeasure">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_detectline_for_cut_to_size_parts">DetectLine for Cut to Size Parts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For a part where blank is already cut to size, the following pre-cut geometries are eligible for measure points:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Corners of the sheet</p>
+</li>
+<li>
+<p>Center of pre-cut circular holes</p>
+</li>
+<li>
+<p>Right angle corner of any pre-cut polygonal holes</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_default_selection_of_measure_points">Default Selection of Measure Points</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only circular holes with <strong>diameter less than 100 mm</strong> are selected as default measure points.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only two measure points are allowed per layout. If a third measure point is selected, the first one will be removed.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Two outside corners of a layout <strong>can not</strong> selected as measure points.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the <strong>example layout</strong> below, we have three pre-cut geometries. A circle with diameter 50 mm, another circle with diameter 216 mm and a square hole with 100 x 100 mm.</p>
+</div>
+<div class="paragraph">
+<p>Regardless of these, the bottom left corner of the layout and pre-cut circular hole with diameter 50 mm
+is selected as default measure points.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/MeasurePoints.png" alt="MeasurePoints">
+</div>
+<div class="title">Figure 1. Example layout</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_change_measure_points">Change Measure Points</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To change the measure points, click on the edge of the layout to bring the <strong>layout panel</strong> and select <strong>change measure points&#8230;&#8203;</strong> option.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/MeasurePoints1.png" alt="MeasurePoints1">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hover over the <strong>change measure points&#8230;&#8203;</strong> option to see the geometry and placement of the existing measure points.</p>
+</li>
+<li>
+<p>To <strong>change</strong> measure points, click on any of the eligible measure points.</p>
+</li>
+<li>
+<p>To <strong>remove</strong> measure points, click on the existing measure point.</p>
+</li>
+<li>
+<p>To <strong>copy</strong> measure points to a different layout on the same sheet, click <strong>copy measure points</strong> option.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/MeasurePoints2.png" alt="MeasurePoints2">
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Some other possible measure points:</div>
+<p><span class="image"><img src="img/MeasurePoints3.png" alt="MeasurePoints3" width="400"></span>
+<span class="image"><img src="img/MeasurePoints4.png" alt="MeasurePoints4" width="410"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/MeasurePoints5.png" alt="MeasurePoints5" width="400"></span>
+<span class="image"><img src="img/MeasurePoints6.png" alt="MeasurePoints6" width="389"></span></p>
+</div>
+</div>
+</div>

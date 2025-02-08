@@ -1,0 +1,358 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_cutting_condition">Cutting Condition</a></li>
+<li><a href="#_pierce_settings">Pierce settings</a></li>
+<li><a href="#_corner_processing">Corner Processing</a></li>
+<li><a href="#_twinline">Twinline</a></li>
+<li><a href="#_scrap_cutting">Scrap cutting</a></li>
+<li><a href="#_vaporization">Vaporization</a></li>
+<li><a href="#_laser_marking">Laser Marking</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_cutting_condition">Cutting Condition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are three condition based on which a sheet is cut.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne28.png" alt="ne28">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Choose cutting condition by</strong> - This setting is to define how the cutting condition will be selected. The options include Maximum segment length, Average segment length and Area. The area is the conventional setting deciding on the TRUMPF rules, and Max and average segments decide accordingly.</p>
+</div>
+<div class="paragraph">
+<p><strong>Switch to slower cutting condition when approach is constrained</strong> - The laser head switches to a slow speed cutting situation when the sheet geometry for the approach is complex.</p>
+</div>
+<div class="paragraph">
+<p><strong>Process for open polylines</strong> - When open polylines are found in a part, depending on which option is selected, Cut will process the polyline accordingly. The options includes Cut, Mark, None and Based on layer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Cut/Mark open polylines</strong> - The option is to cut or mark open polylines
+backwards. This setting will only apply if cut or mark is set for the process for open
+polylines.</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark forming footprint</strong> - When a counter sink situation is detected by Cut, it
+automatically moves the outer circle to the layer Forming footprint. If this option is
+checked, geometry in Form footprint layer will be marked.</p>
+</div>
+<div class="paragraph">
+<p><strong>Stitch cutting threshold distance (0 = disable)</strong> - This option is to define the maximum distance between two cuts which will be considered for stitch cut.</p>
+</div>
+<div class="paragraph">
+<p><strong>Dynamics</strong> - Dynamics dropdown menu includes Normal, High and Reduced.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pierce_settings">Pierce settings</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/pierce.png" alt="pierce">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Allow approach that is more than 0.5 distance to the opposite side</strong> - This option is to define whether an approach is allowed to cover more than the distance to the opposite side.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_corner_processing">Corner Processing</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Rounding tolerance (distance of corner from rounding tip)</strong> - This option is to define the
+maximum distance allowed from the corner to the rounding tip as shown in the image
+below. The distance of the corner from the rounding tip is directly proportional to the
+rounding radius. Based on the value entered here, Cut will select the rounding radius in
+the range of min. and max. If selecting the smallest radius does not bring this distance
+within the tolerance value, then rounding will not be applied (looping or cooling might
+be applied).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess1.png" alt="cornprocess1">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Maximum distance of corner from outermost point on loop</strong> - This option is to define the
+maximum extension of the loop from the corner. The loop extension is directly
+proportional to radius. At a sharp corner, if selecting smallest radius does not bring this
+distance within the value entered here, looping will not be applied (rounding or cooling
+might still be applied).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess2.png" alt="cornprocess2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_twinline">Twinline</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Twinline processing strategy</strong> - This drop-down is to define the twinline strategy to be
+used.</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise</em> - The cuts are made partwise. Suitable for thick sheets where there is no rick
+of tipping contours.</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise-Safe</em> - The cuts are made partwise, but preparatory cuts are made into
+adjacent parts. Suitable for thin sheets where parts could tip.</p>
+</div>
+<div class="paragraph">
+<p><em>Twinline Islands Outer</em> - Twinline edges are cut first, followed by any islands created
+between parts and then outer contour.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use TIO strategy of there are no islands</strong> - The software will always choose Twinline
+Islands Outer strategy, if there are no islands created in the twinline block. This option is
+checked by default.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scrap_cutting">Scrap cutting</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/scrap.png" alt="scrap">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scrap grid width</strong> - This is the width of each cell in the grid that is created by the tooling.
+The value entered here must be such that the resultant square is guaranteed to fall
+through the slats irrespective of its position.</p>
+</div>
+<div class="paragraph">
+<p><strong>Approach length for separating cuts</strong> - This is the length of the approached desired on
+scrap cuts.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vaporization">Vaporization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Vaporize</strong> - This setting will control if vaporization must be done or not. And, if it must be
+done, which portions of the laser cutting path must be vaporized.</p>
+</div>
+<div class="paragraph">
+<p><em>None</em> - No vaporization</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce</em> - Only the pierce points will be vaporized</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce &amp; approach</em> - Pierce and approach portions of the laser cut path will be
+vaporized.</p>
+</div>
+<div class="paragraph">
+<p><em>Full path</em> - The entire cutting path including the pierce, approach and contour will be
+vaporized.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pierce point vaporization circle radius</strong> - If a value greater than zero is entered here, the
+software will move the laser head in a small circle around the pierce point with the
+vaporizing laser on (circle vaporization). The value decides the radius of this circle. If this
+value is zero, vaporizing laser will be turned on exactly on top of the piercing point and
+then immediately turned off (point vaporization).</p>
+</div>
+<div class="paragraph">
+<p><strong>Vaporize marking</strong> - This option is to enable or disable vaporization. Note that laser text
+markings which are etched using TC_WRITE macro are never vaporized.</p>
+</div>
+<div class="paragraph">
+<p>When these settings are modified, there will be no visible change in Cut UI except that the
+NC-code icon will get re-enabled if it was disabled earlier. This is because these settings have
+an impact on code generation. Generated vaporizing code for different cuts is described in
+the table below.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Cut</th>
+<th class="tableblock halign-left valign-top">Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Laser Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the usual cut item to cut a contour of the part.<br>
+If Vaporize = Full path, the entire contour, including pierce and
+approach will be vaporized. However, during the vaporizing pass, beam
+compensation is turned off. It is not necessary that the cut is
+performed immediately after vaporization. If a contour has more than
+1 microjoint and hence multiple lasers cut pieces, all the cut pieces of
+that contour are vaporized first. Then, the cutting of the contour starts.
+This vaporization sequence is called contour-wise, as each contour is
+vaporized before it is cut. This usually leads to efficient head
+movement.</p>
+<p class="tableblock"><span class="image"><img src="img/scraplasercut.png" alt="scraplasercut"></span></p>
+<p class="tableblock">If Vaporize = Pierce &amp; approach, Only the pierce point and approach
+path are vaporized first and at once following that, the laser head will
+reposition over the pierce point and start actual cutting. For this
+vaporizing option and for Vaporize = Pierce, the pierce and approach
+are always vaporized just before executing the cut. This type of
+vaporization sequence is called cut-wise, as each cut piece is vaporized
+before it is cut.</p>
+<p class="tableblock">Behaviour of Vaporize = Pierce, is like the above except that only the
+pierce points are vaporized.</p>
+<p class="tableblock">If Vaporize = None, there is no change in generated code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Scrap Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If Vaporize = Full path, the vaporizing and cutting sequence would be
+as follows:<br></p>
+<p class="tableblock">-  The entire scrap grid will be vaporized first, in the same way as
+it would be cut.</p>
+<p class="tableblock">- The contour along with its pierce and approach will be
+vaporized.</p>
+<p class="tableblock">- The scrap grid will be cut.</p>
+<p class="tableblock">- The contour will be cut.</p>
+<p class="tableblock">So, the grid and the contour, both are vaporized and then they are cut.
+If Vaporize = Pierce &amp; approach or Pierce, the pierce and approach
+segments for scrap and contour will be vaporized just before they are
+cut.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sheet Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A sheet cut will always be vaporized just before it is cut.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Flyline Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These cuts are never vaporized, irrespective of the vaporize settings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Point Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This will be vaporized just before it is cut.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_laser_marking">Laser Marking</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/lasermarking.png" alt="lasermarking">
+</div>
+</div>
+<div class="paragraph">
+<p>Rules for adding one or more text markings on the part can be
+defined in <strong>Settings &#8594; Cut CAM &#8594; Profile CAM &#8594; Laser marking</strong>. In the table shown below, user can add
+multiple rules, each rule leading to placement of a single line of
+text.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne94.png" alt="ne94">
+</div>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Column</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Checkbox</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can enable or disable a rule using the checkbox in the first column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text that must be inserted on the part. This text can
+contain following tokens that will be replaced with the corresponding
+value from Part info. These tokens are not case sensitive.</p>
+<p class="tableblock">$PARTNAME - Name of the part.</p>
+<p class="tableblock">$FILENAME - Name of the FX file.</p>
+<p class="tableblock">$ROOTFILE - Name of the original CAD file.</p>
+<p class="tableblock">$PARTID - Part identifier.</p>
+<p class="tableblock">$CUSTOMER - Customer.</p>
+<p class="tableblock">$AUTHOR - Author.</p>
+<p class="tableblock">$JOBNUMBER - Job number from Part&#8594;Info.</p>
+<p class="tableblock">These variables are indicated in a tooltip.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the font height (from baseline to ascent line.)
+in mm or inch units. When inserting this text, it might be possible that
+there is not enough space to insert the text at prescribed font height.
+In such situations, TecZone Laser will automatically shrink the text size in
+steps of 10% until it is feasible to place it. This stepping down in
+currently allowed up-to 2mm.</p>
+<p class="tableblock">Minimum has been set to 2mm.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Orientation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This column determines the text orientation. Following values
+are possible:<br>
+<strong>Horizontal</strong> - Text will be horizontal.<br>
+<strong>Vertical</strong> - Text will be vertical.</p>
+<p class="tableblock"><em>Along longer side</em>: Text will be aligned with the
+longer side of the part. If the part is landscape, it will be horizontal
+and vertical if the part is portrait.</p>
+<p class="tableblock"><em>Along shorter side</em>: Text will be aligned with
+shorter side of the part (opposite of the above.) When adding two texts
+to the part, this and the previous option can be used together to
+minimize the risk of overlapping text.</p>
+<p class="tableblock"><em>Along longest segment</em>: Text will be aligned with
+the longest linear segment of the outer contour. In this case the text
+might not be axis aligned. Whether the text is placed horizontal,
+vertical or oblique, TecZone Laser will always orient the text such that the user
+finds the text in right direction when looking at the part from the side
+closest to the text. That is, horizontal text placed to bottom-center
+will run left-to-right and when placed to top-center will run
+right-to-left.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Horizontal pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Horizontal alignment of text. Possible values are center, left
+&amp; right. This setting is not relevant if <strong>Along longest segment</strong> is chosen
+as the required orientation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Vertical pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertical alignment of text. Possible values are center, bottom
+&amp; top. This setting is not relevant if <strong>Along longest segment</strong> is chosen
+as the required orientation.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>When adding these marks, TecZone Laser always ensures that the added
+text does not collide with any part contour. For very tiny parts or
+parts with little open space, it will automatically scale down the font
+size by the required amount to fit the text inside the part and away
+from any holes.</p>
+</div>
+</div>
+</div>
